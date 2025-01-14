@@ -29,6 +29,21 @@
     algorithm = "zstd";
   };
 
+
+  systemd.oomd.enableRootSlice = true;
+  systemd.oomd.enableSystemSlice = true;
+  systemd.oomd.enableUserSlices = true;
+
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = ["philo"];
+
+
+  services.supergfxd.enable = true;
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";
@@ -60,11 +75,6 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  services.btrfs.autoScrub = {
-    enable = true;
-    interval = "monthly";
-    fileSystems = ["/"];
-  };
 
   # Security / Polkit
   security.rtkit.enable = true;

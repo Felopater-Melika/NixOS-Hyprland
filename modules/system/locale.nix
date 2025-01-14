@@ -9,7 +9,7 @@
   system,
   ...
 }: {
-  time.timeZone = "Asia/Yangon";
+  time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

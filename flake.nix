@@ -88,6 +88,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
+     darkmatter-grub-theme = {
+      url = gitlab:VandalByte/darkmatter-grub-theme;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
   outputs = inputs @ {
     self,
@@ -95,11 +100,12 @@
     home-manager,
     hy3,
     chaotic,
+    darkmatter-grub-theme,
     ...
   }: let
     system = "x86_64-linux";
-    host = "shizuru";
-    username = "antonio";
+    host = "aetherion";
+    username = "philo";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -120,6 +126,7 @@
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
+          darkmatter-grub-theme.nixosModule
           inputs.catppuccin.nixosModules.catppuccin
           {
             nixpkgs.overlays = [

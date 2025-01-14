@@ -35,7 +35,7 @@ return {
     },
     {
       source = {
-        File = '/home/antonio/.config/hypr/wallpaper_effects/.wallpaper_current',
+        File = '/home/philo/.config/hypr/wallpaper_effects/.wallpaper_current',
       },
       opacity = 0.02,
       vertical_align = "Middle",

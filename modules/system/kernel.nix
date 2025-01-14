@@ -18,7 +18,7 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      kernelPackages = pkgs.linuxPackages_cachyos;
+       kernelPackages = pkgs.linuxPackages_cachyos;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"
@@ -31,16 +31,16 @@ in {
         "systemd.mask=systemd-vconsole-setup.service"
         "systemd.mask=dev-tpmrm0.device"
         "nowatchdog"
-        "nvidia-drm.modeset=1"
-        "nvidia-drm.fbdev=1"
+        "amdgpu.dc=1"
         "modprobe.blacklist=iTCO_wdt"
+        "plymouth.enable=1"
       ];
       kernelModules = ["v4l2loopback"];
       extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
       initrd = {
         verbose = false;
-        availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        kernelModules = ["i915"];
+        availableKernelModules = ["xhci_pci" "ahci" "amdgpu" "snd_hda_intel" "nvme" "usb_storage" "usbhid" "sd_mod"];
+        kernelModules = [ "amdgpu" "snd_hda_intel"];
       };
     };
   };

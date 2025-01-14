@@ -48,10 +48,10 @@ main() {
         9) file="$UserConfigs/WorkspaceRules.conf" ;;
         10) file="$configs/Settings.conf" ;;
         11) file="$configs/Keybinds.conf" ;;
-        12) file="/home/antonio/NixOS-Hyprland/flake.nix" ;;
-        13) file="/home/antonio/NixOS-Hyprland/hosts/shizuru/config.nix" ;;
-        14) file="/home/antonio/NixOS-Hyprland/modules/system/packages.nix" ;;
-        15) file="/home/antonio/NixOS-Hyprland/modules/home-manager/home-packages.nix" ;;
+        12) file="/home/philo/NixOS-Hyprland/flake.nix" ;;
+        13) file="/home/philo/NixOS-Hyprland/hosts/aetherion/config.nix" ;;
+        14) file="/home/philo/NixOS-Hyprland/modules/system/packages.nix" ;;
+        15) file="/home/philo/NixOS-Hyprland/modules/home-manager/home-packages.nix" ;;
         *) return ;;  # Do nothing for invalid choices
     esac
 
