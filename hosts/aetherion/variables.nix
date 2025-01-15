@@ -1,11 +1,10 @@
 {
   # Git Configuration ( For Pulling Software Repos )
 
-
   hostname = "aetherion";
   username = "philo";
   configDirectory = "/home/philo/NixOS-Hyprland/";
-  gitUsername = "Felopater Melika";
+  gitUsername = "Felopater-Melika";
   gitEmail = "felopatermelika@gmail.com";
 
   # Hyprland Settings
@@ -18,6 +17,4 @@
   browser = "firefox"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "wezterm"; # Set Default System Terminal
   keyboardLayout = "us";
-
-
 }

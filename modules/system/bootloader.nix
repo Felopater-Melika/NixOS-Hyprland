@@ -17,8 +17,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    catppuccin.grub.enable = true;
-    catppuccin.grub.flavor = "mocha";
+    # catppuccin.grub.enable = true;
+    # catppuccin.grub.flavor = "mocha";
     boot = {
       loader.efi = {
         canTouchEfiVariables = true;
@@ -32,13 +32,13 @@ in {
         extraGrubInstallArgs = ["--bootloader-id=${host}"];
         configurationName = "${host}";
         gfxmodeEfi = "2560x1440";
-         useOSProber = true;
-         extraEntries = ''
-  menuentry "Fallback Kernel (Standard NixOS)" {
-      linux ${pkgs.linuxPackages.kernel.out}/bzImage
-      initrd ${pkgs.linuxPackages.kernel.out}/initrd
-  }
-'';
+        useOSProber = true;
+        extraEntries = ''
+          menuentry "Fallback Kernel (Standard NixOS)" {
+              linux ${pkgs.linuxPackages.kernel.out}/bzImage
+              initrd ${pkgs.linuxPackages.kernel.out}/initrd
+          }
+        '';
         #    theme = pkgs.catppuccin-grub;
         #  dedsec-theme = {
         #    enable = true;
@@ -46,15 +46,21 @@ in {
         #    icon = "color";
         #    resolution = "1440p";
         #};
+
+        darkmatter-theme = {
+          enable = true;
+          style = "nixos";
+          icon = "color";
+          resolution = "1440p";
+        };
       };
-    #   darkmatter-theme = {
-    #   enable = true;
-    #   style = "nixos";
-    #   icon = "color";
-    #   resolution = "1080p";
-    # }; 
-    
-       
+      #   darkmatter-theme = {
+      #   enable = true;
+      #   style = "nixos";
+      #   icon = "color";
+      #   resolution = "1080p";
+      # };
+
       tmp = {
         useTmpfs = false;
         tmpfsSize = "30%";

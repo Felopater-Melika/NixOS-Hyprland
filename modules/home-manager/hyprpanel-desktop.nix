@@ -34,7 +34,7 @@
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
       "bar.workspaces.spacing" = "1.5";
-      "bar.customModules.cava.showIcon"= false;
+      "bar.customModules.cava.showIcon" = false;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
     settings = {
@@ -119,7 +119,7 @@
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
-      bar.workspaces.monitorSpecific = false;
+      bar.workspaces.monitorSpecific = true;
       bar.workspaces.workspaces = 5;
       menus.clock = {
         time = {
@@ -129,7 +129,7 @@
         weather.unit = "metric";
       };
       menus.dashboard.directories.enabled = true;
-      menus.dashboard.stats.enable_gpu = false;
+      menus.dashboard.stats.enable_gpu = true;
       theme.bar.transparent = false;
     };
   };

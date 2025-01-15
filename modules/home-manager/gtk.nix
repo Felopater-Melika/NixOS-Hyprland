@@ -10,7 +10,7 @@
       packages = pkgs.papirus-icon-theme;
     };
     theme.packages = pkgs.catppuccin-gtk.override {
-      accents = ["mauve"]; # You can specify multiple accents here to output multiple themes
+      accents = ["dark"]; # You can specify multiple accents here to output multiple themes
       size = "standard";
       variant = "mocha";
     };

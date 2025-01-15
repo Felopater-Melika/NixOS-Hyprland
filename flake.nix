@@ -88,11 +88,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
-     darkmatter-grub-theme = {
-      url = gitlab:VandalByte/darkmatter-grub-theme;
+    darkmatter-grub-theme = {
+      url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
   outputs = inputs @ {
     self,

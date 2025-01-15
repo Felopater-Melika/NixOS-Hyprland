@@ -16,7 +16,7 @@ in {
     enable = mkEnableOption "Enable Display Manager Services";
   };
 
-  config = mkIf cfg.enable { 
+  config = mkIf cfg.enable {
     services.displayManager.defaultSession = "hyprland";
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.
@@ -24,7 +24,7 @@ in {
       theme = "catppuccin-sddm-corners";
       settings = {
         Theme = {
-          CursorTheme = "Bibata-Modern-Ice";
+          CursorTheme = "catppuccin-mocha-dark-cursors";
         };
       };
     };

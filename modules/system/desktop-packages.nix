@@ -10,7 +10,7 @@
       inherit (oldAttrs) pname;
       version = "1.8.2";
     }))
-    brightnessctl # for brightness control 
+    brightnessctl # for brightness control
     cliphist
     eog
     gnome-system-monitor
@@ -66,8 +66,8 @@
     starship
     telegram-desktop
     vesktop
-    papirus-folders
-    papirus-icon-theme
+    # papirus-folders
+    # papirus-icon-theme
     zoxide
     bibata-cursors
     spotify

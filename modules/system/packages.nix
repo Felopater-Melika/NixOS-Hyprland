@@ -5,7 +5,12 @@
   lib,
   chaotic,
   ...
-}: {
+}: let
+  sddmThemes = import ./../../pkgs/sddm.nix {
+    stdenv = pkgs.stdenv;
+    fetchFromGitHub = pkgs.fetchFromGitHub;
+  };
+in {
   environment.systemPackages = with pkgs; [
     (ags.overrideAttrs (oldAttrs: {
       inherit (oldAttrs) pname;
@@ -14,7 +19,11 @@
     brightnessctl # for brightness control
     libinput
     libinput-gestures
+
     cliphist
+    kdePackages.qtsvg
+    kdePackages.qtmultimedia
+    kdePackages.qtvirtualkeyboard
     eog
     gnome-system-monitor
     file-roller
@@ -24,11 +33,16 @@
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
     imagemagick
+    catppuccin-papirus-folders
     inxi
     jq
+    magnetic-catppuccin-gtk
+    catppuccin-gtk
+    catppuccin-qt5ct
     kitty
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
+    catppuccin-cursors.mochaDark
     nwg-look # requires unstable channel
     # nwg-dock-hyprland
     wdisplays
@@ -70,12 +84,16 @@
     starship
     telegram-desktop
     vesktop
-    papirus-folders
-    papirus-icon-theme
+    # papirus-folders
+    # papirus-icon-theme
     spotify
     jetbrains-toolbox
     sddm
     catppuccin-sddm-corners
+    # (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
+    #   theme = "japanese_aesthetic";
+    # })
+    sddmThemes.tokyo-night
     zoxide
     bibata-cursors
     firefox_nightly
