@@ -3,7 +3,6 @@
   config,
   inputs,
   lib,
-  chaotic,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -11,9 +10,7 @@
       inherit (oldAttrs) pname;
       version = "1.8.2";
     }))
-    brightnessctl # for brightness control
-    libinput
-    libinput-gestures
+    brightnessctl # for brightness control 
     cliphist
     eog
     gnome-system-monitor
@@ -30,9 +27,8 @@
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    # nwg-dock-hyprland
-    wdisplays
-    nvtopPackages.full
+    #nwg-dock-hyprland
+    #nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
@@ -45,6 +41,7 @@
     rofi-wayland
     slurp
     swappy
+    #swaynotificationcenter
     swww
     unzip
     wallust
@@ -53,16 +50,15 @@
     yad
     yt-dlp
     nix-ld
-    power-profiles-daemon
     fd
     home-manager
     bluez-tools
-    wgpu-utils
     gtk3
     gtk4
+    gtkmm4
+    gtkmm3
     fish
     atuin
-    bun
     dart-sass
     nodejs
     sassc
@@ -72,12 +68,8 @@
     vesktop
     papirus-folders
     papirus-icon-theme
-    spotify
-    jetbrains-toolbox
-    sddm
-    catppuccin-sddm-corners
     zoxide
     bibata-cursors
-    firefox_nightly
+    spotify
   ];
 }

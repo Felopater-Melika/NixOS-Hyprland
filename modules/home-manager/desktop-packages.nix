@@ -9,15 +9,12 @@
     manga-tui
     nitch
     rustup
-    hiddify-app
     github-cli
     neovide
     inputs.wezterm.packages.${pkgs.system}.default
-    inputs.zen-browser.packages."${pkgs.system}".default
-    inputs.nyxexprs.packages.${pkgs.system}.ani-cli
+    #inputs.zen-browser.packages."${pkgs.system}".default
+    #inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
-    inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    firedragon
     yazi
     microfetch
     gpu-screen-recorder
@@ -25,10 +22,6 @@
     libqalculate
     libdbusmenu-gtk3
     dbus-glib
-    gtkmm3
-    gtkmm4
-    gtkmm2
-    komikku
     mangal
     mangareader
     lutgen
@@ -36,5 +29,6 @@
     tmux-sessionizer
     tmuxPlugins.sidebar
     gtk4
+    mangayomi
   ];
 }

@@ -15,19 +15,10 @@
     theme = "catppuccin_mocha";
     layout = {
       "bar.layouts" = {
-        "*" = {
-          left = ["dashboard" "windowtitle" "systray" "cava"];
+        "0" = {
+          left = ["dashboard" "windowtitle" "systray" "ram" "netstat"];
           middle = ["workspaces"];
-          right = [
-            "media"
-            "clock"
-            "hypridle"
-            "volume"
-            "network"
-            "bluetooth"
-            "battery"
-            "power"
-          ];
+          right = ["cava" "media" "clock" "hypridle" "power"];
         };
       };
     };
@@ -41,9 +32,9 @@
       "theme.bar.border.color" = "#f9e2af";
       "theme.osd.orientation" = "vertical";
       "theme.osd.location" = "right";
-      "bar.windowtitle.leftClick" = "pkill rofi || /home/antonio/.local/bin/agsv1 -t overview";
+      "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
       "bar.workspaces.spacing" = "1.5";
-      "bar.customModules.cava.showIcon" = false;
+      "bar.customModules.cava.showIcon"= false;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
     settings = {
@@ -53,12 +44,12 @@
       theme.bar.buttons.workspaces.spacing = "0.5";
       theme.bar.buttons.background_hover_opacity = 80;
       theme.bar.buttons.innerRadiusMultiplier = "0.4";
-      theme.bar.buttons.radius = "0.5em";
-      theme.bar.buttons.y_margins = "0.8em";
+      theme.bar.buttons.radius = "1.0em";
+      theme.bar.buttons.y_margins = "0.5em";
       theme.bar.buttons.padding_y = "0.1rem";
       theme.bar.buttons.padding_x = "0.7rem";
       theme.bar.buttons.spacing = "0.25em";
-      theme.bar.border.location = "full";
+      theme.bar.border.location = "none";
       theme.bar.buttons.workspaces.enableBorder = true;
       theme.bar.buttons.modules.power.enableBorder = true;
       theme.bar.buttons.dashboard.enableBorder = true;
@@ -66,11 +57,11 @@
       theme.bar.outer_spacing = "1.0em";
       theme.bar.label_spacing = "0.5em";
       theme.bar.border_radius = "0.6em";
-      #   theme.bar.margin_sides = "18.5em";
+      theme.bar.margin_sides = "2.5em";
       theme.bar.margin_bottom = "0em";
-      theme.bar.margin_top = "-0.5em";
+      theme.bar.margin_top = "0.5em";
       theme.bar.layer = "overlay";
-      theme.bar.opacity = 100;
+      theme.bar.opacity = 90;
       theme.bar.scaling = 85;
       theme.osd.scaling = 80;
       theme.tooltip.scaling = 80;
@@ -105,7 +96,7 @@
       bar.customModules.updates.pollingInterval = 1440000;
       bar.launcher.icon = "❄️";
       theme.bar.floating = true;
-      theme.bar.buttons.enableBorders = false;
+      theme.bar.buttons.enableBorders = true;
       bar.clock.format = "%y/%m/%d  %H:%M";
       bar.media.show_active_only = false;
       bar.notifications.show_total = true;
@@ -124,11 +115,11 @@
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
-      bar.workspaces.monitorSpecific = true;
+      bar.workspaces.monitorSpecific = false;
       bar.workspaces.workspaces = 5;
       menus.clock = {
         time = {
@@ -138,7 +129,7 @@
         weather.unit = "metric";
       };
       menus.dashboard.directories.enabled = true;
-      menus.dashboard.stats.enable_gpu = true;
+      menus.dashboard.stats.enable_gpu = false;
       theme.bar.transparent = false;
     };
   };
