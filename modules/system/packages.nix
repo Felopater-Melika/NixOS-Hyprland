@@ -12,7 +12,7 @@
     }))
     brightnessctl # for brightness control
     libinput
-    libinput-gestures 
+    libinput-gestures
     cliphist
     eog
     gnome-system-monitor
@@ -29,7 +29,8 @@
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    nwg-dock-hyprland
+    # nwg-dock-hyprland
+    wdisplays
     nvtopPackages.full
     pamixer
     pavucontrol
@@ -72,6 +73,7 @@
     papirus-folders
     papirus-icon-theme
     spotify
+    jetbrains-toolbox
     sddm
     catppuccin-sddm-corners
     zoxide

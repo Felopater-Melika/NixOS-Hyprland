@@ -33,7 +33,7 @@
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
       #pkgs.hyprlandPlugins.borders-plus-plus
-      #pkgs.hyprlandPlugins.hyprscroller
+      # pkgs.hyprlandPlugins.hyprscroller
     ];
   };
 }

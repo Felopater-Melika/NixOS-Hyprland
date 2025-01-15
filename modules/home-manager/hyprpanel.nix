@@ -15,10 +15,19 @@
     theme = "catppuccin_mocha";
     layout = {
       "bar.layouts" = {
-        "0" = {
+        "*" = {
           left = ["dashboard" "windowtitle" "systray" "cava"];
           middle = ["workspaces"];
-          right = ["media" "clock" "hypridle" "power"];
+          right = [
+            "media"
+            "clock"
+            "hypridle"
+            "volume"
+            "network"
+            "bluetooth"
+            "battery"
+            "power"
+          ];
         };
       };
     };
@@ -34,7 +43,7 @@
       "theme.osd.location" = "right";
       "bar.windowtitle.leftClick" = "pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
       "bar.workspaces.spacing" = "1.5";
-      "bar.customModules.cava.showIcon"= false;
+      "bar.customModules.cava.showIcon" = false;
       "theme.font.name" = "JetBrainsMono Nerd Font";
     };
     settings = {
@@ -57,7 +66,7 @@
       theme.bar.outer_spacing = "1.0em";
       theme.bar.label_spacing = "0.5em";
       theme.bar.border_radius = "0.6em";
-      theme.bar.margin_sides = "18.5em";
+      #   theme.bar.margin_sides = "18.5em";
       theme.bar.margin_bottom = "0em";
       theme.bar.margin_top = "-0.5em";
       theme.bar.layer = "overlay";
@@ -115,11 +124,11 @@
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = false;
+      bar.workspaces.show_icons = true;
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
-      bar.workspaces.monitorSpecific = false;
+      bar.workspaces.monitorSpecific = true;
       bar.workspaces.workspaces = 5;
       menus.clock = {
         time = {
@@ -129,7 +138,7 @@
         weather.unit = "metric";
       };
       menus.dashboard.directories.enabled = true;
-      menus.dashboard.stats.enable_gpu = false;
+      menus.dashboard.stats.enable_gpu = true;
       theme.bar.transparent = false;
     };
   };
