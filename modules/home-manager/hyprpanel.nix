@@ -15,19 +15,10 @@
     theme = "catppuccin_mocha";
     layout = {
       "bar.layouts" = {
-        "*" = {
+        "0" = {
           left = ["dashboard" "windowtitle" "systray" "cava"];
           middle = ["workspaces"];
-          right = [
-            "media"
-            "clock"
-            "hypridle"
-            "volume"
-            "network"
-            "bluetooth"
-            "battery"
-            "power"
-          ];
+          right = ["media" "clock" "hypridle" "power"];
         };
       };
     };
@@ -66,7 +57,7 @@
       theme.bar.outer_spacing = "1.0em";
       theme.bar.label_spacing = "0.5em";
       theme.bar.border_radius = "0.6em";
-      #   theme.bar.margin_sides = "18.5em";
+      theme.bar.margin_sides = "18.5em";
       theme.bar.margin_bottom = "0em";
       theme.bar.margin_top = "-0.5em";
       theme.bar.layer = "overlay";
@@ -124,11 +115,11 @@
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+      bar.workspaces.show_icons = false;
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
-      bar.workspaces.monitorSpecific = true;
+      bar.workspaces.monitorSpecific = false;
       bar.workspaces.workspaces = 5;
       menus.clock = {
         time = {
@@ -138,7 +129,7 @@
         weather.unit = "metric";
       };
       menus.dashboard.directories.enabled = true;
-      menus.dashboard.stats.enable_gpu = true;
+      menus.dashboard.stats.enable_gpu = false;
       theme.bar.transparent = false;
     };
   };

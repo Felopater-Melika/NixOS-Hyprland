@@ -119,7 +119,7 @@
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
-      bar.workspaces.monitorSpecific = true;
+      bar.workspaces.monitorSpecific = false;
       bar.workspaces.workspaces = 5;
       menus.clock = {
         time = {
@@ -129,7 +129,7 @@
         weather.unit = "metric";
       };
       menus.dashboard.directories.enabled = true;
-      menus.dashboard.stats.enable_gpu = true;
+      menus.dashboard.stats.enable_gpu = false;
       theme.bar.transparent = false;
     };
   };

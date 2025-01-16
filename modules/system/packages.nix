@@ -19,13 +19,14 @@ in {
     brightnessctl # for brightness control
     libinput
     libinput-gestures
-
+    nautilus
     cliphist
     kdePackages.qtsvg
     kdePackages.qtmultimedia
     kdePackages.qtvirtualkeyboard
     eog
     gnome-system-monitor
+    prismlauncher
     file-roller
     grim
     pwvucontrol_git
