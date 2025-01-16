@@ -17,6 +17,13 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = [
+      pkgs.kdePackages.qtsvg
+      pkgs.kdePackages.qtmultimedia
+      pkgs.kdePackages.qtvirtualkeyboard
+      pkgs.sddm
+      pkgs.catppuccin-sddm-corners
+    ];
     services.displayManager.defaultSession = "hyprland";
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.

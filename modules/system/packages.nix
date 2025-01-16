@@ -89,8 +89,6 @@ in {
     # papirus-icon-theme
     spotify
     jetbrains-toolbox
-    sddm
-    catppuccin-sddm-corners
     # (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
     #   theme = "japanese_aesthetic";
     # })
