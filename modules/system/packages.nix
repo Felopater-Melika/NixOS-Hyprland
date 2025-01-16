@@ -74,8 +74,6 @@
     papirus-icon-theme
     spotify
     jetbrains-toolbox
-    sddm
-    catppuccin-sddm-corners
     zoxide
     bibata-cursors
     firefox_nightly
