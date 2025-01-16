@@ -57,7 +57,7 @@
       theme.bar.outer_spacing = "1.0em";
       theme.bar.label_spacing = "0.5em";
       theme.bar.border_radius = "0.6em";
-      theme.bar.margin_sides = "18.5em";
+      theme.bar.margin_sides = "0em";
       theme.bar.margin_bottom = "0em";
       theme.bar.margin_top = "-0.5em";
       theme.bar.layer = "overlay";
@@ -115,7 +115,7 @@
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = false;
+      bar.workspaces.show_icons = true;
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";

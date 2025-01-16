@@ -115,7 +115,7 @@
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
       bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = false;
+      bar.workspaces.show_icons = true;
       bar.workspaces.ignored = "[-99]";
       theme.font.name = "JetBrainsMono Nerd Font";
       theme.font.size = "1.1rem";
