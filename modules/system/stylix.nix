@@ -9,8 +9,15 @@
   system,
   ...
 }: {
+  catppuccin = {
+    # enable = true;
+    flavor = "mocha";
+    accent = "blue";
+  };
+
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
   stylix.targets.spicetify.enable = true;
+  stylix.polarity = "dark";
   stylix.targets.gtk.enable = true;
   stylix.targets.fish.enable = true;
   stylix = {

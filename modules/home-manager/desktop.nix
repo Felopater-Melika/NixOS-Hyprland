@@ -21,5 +21,6 @@
     ./hyprpanel-desktop.nix
     ./variables.nix
     ./scripts/scripts.nix
+    ./qt.nix
   ];
 }

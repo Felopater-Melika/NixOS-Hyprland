@@ -19,7 +19,6 @@
     ];
     randomizedDelaySec = "45min";
   };
-
   environment.systemPackages = with pkgs; [
     wget
     git
@@ -31,6 +30,7 @@
     duf
     eza
     ffmpeg
+    libsForQt5.kdeconnect-kde
     glib #for gsettings to work
     gsettings-qt
     git

@@ -23,5 +23,6 @@
     ./variables.nix
     ./zathura.nix
     ./scripts/scripts.nix
+    ./qt.nix
   ];
 }

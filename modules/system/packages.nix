@@ -40,6 +40,8 @@ in {
     magnetic-catppuccin-gtk
     catppuccin-gtk
     catppuccin-qt5ct
+    catppuccin-kvantum
+    libsForQt5.qtstyleplugin-kvantum
     kitty
     libsForQt5.qtstyleplugin-kvantum #kvantum
     networkmanagerapplet
@@ -94,6 +96,7 @@ in {
     # })
     sddmThemes.tokyo-night
     zoxide
+    todoist-electron
     bibata-cursors
     firefox_nightly
   ];

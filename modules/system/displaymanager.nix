@@ -27,6 +27,7 @@ in {
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";
     services.displayManager.sddm = {
+      # package = pkgs.kdePackages.sddm;
       enable = true; # Enable SDDM.
       wayland.enable = true;
       theme = "catppuccin-sddm-corners";
