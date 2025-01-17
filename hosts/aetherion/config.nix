@@ -15,6 +15,7 @@
     ps:
       with ps; [
         requests
+        diagrams
         pyquery # needed for hyprland-dots Weather script
       ]
   );
@@ -64,6 +65,8 @@ in {
       vaapiVdpau
       mesa
       egl-wayland
+      mermaid-cli
+      vscode
       waybar # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
