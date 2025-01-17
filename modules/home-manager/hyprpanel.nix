@@ -61,7 +61,7 @@
       theme.bar.margin_bottom = "0em";
       theme.bar.margin_top = "-0.5em";
       theme.bar.layer = "overlay";
-      theme.bar.opacity = 100;
+      theme.bar.opacity = 90;
       theme.bar.scaling = 85;
       theme.osd.scaling = 80;
       theme.tooltip.scaling = 80;
@@ -100,7 +100,7 @@
       bar.clock.format = "%y/%m/%d  %H:%M";
       bar.media.show_active_only = false;
       bar.notifications.show_total = true;
-      bar.windowtitle.leftClick = " pkill rofi || /nix/store/rsb5ihbh4m3q4x046vc0y1r301i8j3is-ags-1.8.2/bin/ags -t overview";
+      bar.windowtitle.leftClick = " pkill rofi || /home/$USER/.local/bin/agsv1 -t overview";
       theme.bar.buttons.modules.ram.enableBorder = false;
       bar.battery.hideLabelWhenFull = true;
       menus.dashboard.controls.enabled = true;
@@ -121,6 +121,7 @@
       theme.font.size = "1.1rem";
       bar.workspaces.monitorSpecific = false;
       bar.workspaces.workspaces = 5;
+      tear = true;
       menus.clock = {
         time = {
           military = true;
