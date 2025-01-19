@@ -29,14 +29,12 @@
     algorithm = "zstd";
   };
 
-
   systemd.oomd.enableRootSlice = true;
   systemd.oomd.enableSystemSlice = true;
   systemd.oomd.enableUserSlices = true;
 
   hardware.openrazer.enable = true;
   hardware.openrazer.users = ["philo"];
-
 
   services.supergfxd.enable = true;
   services.asusd = {
