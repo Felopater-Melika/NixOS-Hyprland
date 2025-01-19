@@ -38,6 +38,6 @@
     ./cachix.nix
     ./packages.nix
     ./nix.nix
-    
+    # ./k8s.nix
   ];
 }

@@ -10,6 +10,21 @@
   system,
   ...
 }: let
+  name = "aetherion";
+  system = "x86_64-linux";
+  username = "philo";
+  version = "25.05";
+  settings = {
+    inherit system username;
+    hostname = "${name}";
+    stateVersion = "${version}";
+    hostPlatform = {
+      inherit system;
+    };
+    userdir = "/home/${username}";
+    useremail = "${username}@${system}.local";
+    userfullname = "${username}";
+  };
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
     ps:
@@ -24,6 +39,7 @@ in {
     ./hardware.nix
     ./users.nix
     ../../modules/system
+    ../../modules/features/virtual-machine/kubernetes/k3s
   ];
 
   nixpkgs.overlays = [
@@ -51,7 +67,7 @@ in {
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  #   nixpkgs.config.allowUnfree = true;
   users = {
     mutableUsers = true;
   };

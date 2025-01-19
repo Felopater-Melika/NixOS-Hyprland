@@ -124,7 +124,7 @@
       tear = true;
       menus.clock = {
         time = {
-          military = true;
+          military = false;
           hideSeconds = true;
         };
         weather.unit = "metric";

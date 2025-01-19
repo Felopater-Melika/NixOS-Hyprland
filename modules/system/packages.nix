@@ -36,6 +36,7 @@ in {
     imagemagick
     catppuccin-papirus-folders
     inxi
+    gh-dash
     jq
     magnetic-catppuccin-gtk
     catppuccin-gtk
@@ -80,12 +81,32 @@ in {
     fish
     atuin
     bun
+    deno
+    nodejs_23
+    pnpm
+    rustup
+    cargo
+    rust-analyzer
+    clippy
+    rustfmt
+    httpie
+    pipx
+    rainfrog
+    docker-compose
+    lazydocker
+    arion
+    dive
+    podman-tui
+    nvd
+    nix-output-monitor
+    nix-prefetch
     dart-sass
     nodejs
     sassc
     libgtop
     starship
     telegram-desktop
+    pre-commit
     vesktop
     # papirus-folders
     # papirus-icon-theme

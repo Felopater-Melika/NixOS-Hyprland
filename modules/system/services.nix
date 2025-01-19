@@ -8,8 +8,8 @@
   inputs,
   system,
   ...
-}: {
-  
+}
+: {
   services = {
     xserver = {
       enable = true;
@@ -29,7 +29,7 @@
 
     gvfs.enable = true;
     tumbler.enable = true;
-    udev.enable = true; 
+    udev.enable = true;
     envfs.enable = true;
     dbus.enable = true;
     fstrim = {
@@ -42,6 +42,13 @@
     nfs.server.enable = false;
     openssh.enable = true;
     blueman.enable = true;
+
+    # catppuccin.k9s = {
+    #   enable = true;
+    #   flavor = "mocha";
+    #   transparent = true;
+    # };
+
     #printing = {
     #  enable = false;
     #  drivers = [

@@ -87,6 +87,35 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    for-all-systems = {
+      url = "github:Industrial/for-all-systems";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-github-actions = {
+      url = "github:nix-community/nix-github-actions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kubenix = {
+      url = "github:hall/kubenix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     nh.url = "github:viperML/nh";
     darkmatter-grub-theme = {
       url = "gitlab:VandalByte/darkmatter-grub-theme";
@@ -99,7 +128,12 @@
     home-manager,
     hy3,
     chaotic,
+    kubenix,
     darkmatter-grub-theme,
+    treefmt-nix,
+    git-hooks,
+    for-all-systems,
+    nix-github-actions,
     ...
   }: let
     system = "x86_64-linux";
@@ -109,6 +143,45 @@
       inherit system;
       config.allowUnfree = true;
     };
+
+    # Helper function to apply configurations to all systems.
+    systems = ["x86_64-linux" "aarch64-darwin"];
+    forAllSystems = inputs.for-all-systems.forAllSystems {
+      nixpkgs = inputs.nixpkgs;
+      inherit systems;
+    };
+
+    # Pre-commit configuration
+    preCommitCheck = forAllSystems ({system, ...}:
+      inputs.git-hooks.lib.${system}.run {
+        src = ./..;
+        hooks = {
+          # Specific hooks for pre-commit
+          check-toml.enable = true;
+          taplo.enable = true;
+          detect-aws-credentials.enable = true;
+          trim-trailing-whitespace.enable = true;
+          format-and-check = {
+            enable = true;
+            name = "Fmt and Check";
+            entry = "nix fmt && nix flake check";
+            pass_filenames = false;
+            stages = ["pre-commit"];
+          };
+        };
+      });
+
+    # Treefmt configuration for formatting
+    treefmtEval = forAllSystems ({pkgs, ...}:
+      inputs.treefmt-nix.lib.evalModule pkgs {
+        projectRootFile = "flake.nix";
+        programs = {
+          alejandra.enable = true;
+          actionlint.enable = true;
+          beautysh.enable = true;
+          yamlfmt.enable = true;
+        };
+      });
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
@@ -138,5 +211,40 @@
         ];
       };
     };
+
+    # Add devShells with pre-commit and treefmt setup
+    devShells = forAllSystems ({
+      pkgs,
+      system,
+      ...
+    }: {
+      default = pkgs.mkShell {
+        shellHook = preCommitCheck.${system}.shellHook;
+        buildInputs = preCommitCheck.${system}.enabledPackages;
+        packages = with pkgs; [
+          direnv
+          jq
+          pre-commit
+        ];
+      };
+    });
+
+    # Add formatter using treefmt
+    formatter =
+      forAllSystems ({system, ...}:
+        treefmtEval.${system}.config.build.wrapper);
+
+    # GitHub Actions (optional)
+    githubActions = let
+      supportedSystems = ["x86_64-linux"];
+    in
+      inputs.nix-github-actions.lib.mkGithubMatrix {
+        checks = inputs.nixpkgs.lib.getAttrs supportedSystems self.checks;
+      };
+
+    # Add flake checks for formatting
+    checks = forAllSystems ({system, ...}: {
+      formatting = treefmtEval.${system}.config.build.check self;
+    });
   };
 }

@@ -23,16 +23,16 @@
     ./services.nix
     ./flatpak.nix
     ./fonts.nix
-    ./greetd.nix
+    # ./greetd.nix
     ./wayland-desktop.nix
     ./network.nix
     ./scheduler.nix
     ./virtualization.nix
     ./powermanagement.nix
     ./amd-drivers.nix
-    ./intel-drivers.nix
-    ./nvidia-drivers.nix
-    ./nvidia-prime-drivers.nix
+    # ./intel-drivers.nix
+    # ./nvidia-drivers.nix
+    # ./nvidia-prime-drivers.nix
     ./vm-guest-services.nix
     ./local-hardware-clock.nix
     ./cachix.nix
