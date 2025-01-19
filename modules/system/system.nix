@@ -19,10 +19,7 @@
     ];
     randomizedDelaySec = "45min";
   };
-  catppuccin.tty = {
-    enable = true;
-    flavor = "mocha";
-  };
+
   environment.systemPackages = with pkgs; [
     wget
     git

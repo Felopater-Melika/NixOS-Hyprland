@@ -14,7 +14,7 @@
     flake = "/home/philo/NixOS-Hyprland";
     clean = {
       enable = true;
-      extraArgs = "--keep-since 1w";
+      extraArgs = "--keep-since 3d --keep 3";
     };
   };
   environment.systemPackages = with pkgs; [
