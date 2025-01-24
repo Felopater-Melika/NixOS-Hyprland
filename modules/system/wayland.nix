@@ -2,20 +2,23 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+let 
+    hyprFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+in
+{
   programs = {
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland; #hyprland-git
-      #package = pkgs.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland; # xdphls
-      #portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      package = pkgs.hyprland;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
     };
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    firefox.enable = false;
+    firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
     thunar.enable = true;

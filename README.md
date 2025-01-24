@@ -37,7 +37,7 @@
    <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/4.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/5.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./.github/assets/screenshots/6.png" style="margin-bottom: 10px;"/> <br>  
+   <img src="./.github/assets/screenshots/6.jpg" style="margin-bottom: 10px;"/> <br>  
    <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;"/> <br>
    Screenshots last updated <b>2024-12-26</b>
 </p>
@@ -50,7 +50,7 @@
 
 -   [flake.nix](flake.nix) base of the configuration
 -   [hosts](hosts) 🌳 per-host configurations that contain machine specific configurations
-    - [default](hosts/default/) 🖥️Default configuration for install script
+    - [default](hosts/default/) 🖥️Default configurations for my desktop if you have laptop, use hostname as shizuru
     - [shizuru](hosts/shizuru/) 💻 Laptop specific configuration for my like
         - [config](hosts/shizuru/config.nix) kernel packages(cachyos kernel), scx enable(scx_lavd) and system level packages
         - [hardware](hosts/shizuru/hardware.nix) hardware configuration
