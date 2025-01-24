@@ -16,7 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-    yazi.url = "github:sxyazi/yazi";
     matugen = {
       url = "github:/InioX/Matugen";
     };
@@ -47,7 +46,10 @@
       url = "github:outfoxxed/hy3";
       inputs.hyprland.follows = "hyprland";
     };
-
+    hyprscroller = {
+      url = "github:maotseantonio/hyprscroller-flake";
+      inputs.hyprland.follows = "hyprland";
+    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
@@ -60,9 +62,8 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
-    textfox.url = "github:adriankarlen/textfox";
+    textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprland-stable.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.46.1&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
@@ -88,11 +89,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nh.url = "github:viperML/nh";
-     darkmatter-grub-theme = {
+    nur.url = "github:nix-community/NUR";
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    darkmatter-grub-theme = {
       url = gitlab:VandalByte/darkmatter-grub-theme;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
   outputs = inputs @ {
     self,
@@ -101,6 +106,7 @@
     hy3,
     chaotic,
     darkmatter-grub-theme,
+    lix-module,
     ...
   }: let
     system = "x86_64-linux";
@@ -128,6 +134,7 @@
           inputs.stylix.nixosModules.stylix
           darkmatter-grub-theme.nixosModule
           inputs.catppuccin.nixosModules.catppuccin
+          lix-module.nixosModules.default
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
