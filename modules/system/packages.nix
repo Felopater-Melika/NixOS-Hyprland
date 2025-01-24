@@ -37,6 +37,9 @@ in {
     catppuccin-papirus-folders
     inxi
     gh-dash
+    signal-desktop
+    zoom-us
+    warp-terminal
     jq
     magnetic-catppuccin-gtk
     catppuccin-gtk

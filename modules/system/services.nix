@@ -43,6 +43,10 @@
     openssh.enable = true;
     blueman.enable = true;
 
+    hypridle = {
+      enable = true;
+      package = pkgs.hypridle;
+    };
     # catppuccin.k9s = {
     #   enable = true;
     #   flavor = "mocha";
