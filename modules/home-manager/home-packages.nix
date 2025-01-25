@@ -12,10 +12,9 @@
     hiddify-app
     github-cli
     neovide
-    inputs.wezterm.packages.${pkgs.system}.default
+    # inputs.wezterm.packages.${pkgs.system}.default
     # inputs.zen-browser.packages."${pkgs.system}".specific
     wezterm
-    #inputs.wezterm.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull

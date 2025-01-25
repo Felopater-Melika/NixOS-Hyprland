@@ -40,6 +40,7 @@ in {
     signal-desktop
     zoom-us
     warp-terminal
+    brave
     jq
     magnetic-catppuccin-gtk
     catppuccin-gtk
