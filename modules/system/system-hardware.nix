@@ -72,7 +72,7 @@
   };
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  #   services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;

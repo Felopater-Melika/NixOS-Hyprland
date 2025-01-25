@@ -11,6 +11,13 @@
     fetchFromGitHub = pkgs.fetchFromGitHub;
   };
 in {
+  nixpkgs.overlays = [
+    (self: super: {
+      rocm-llvm-libcxx = super.rocm-llvm-libcxx.overrideAttrs (oldAttrs: {
+        doCheck = false;
+      });
+    })
+  ];
   environment.systemPackages = with pkgs; [
     (ags.overrideAttrs (oldAttrs: {
       inherit (oldAttrs) pname;
@@ -38,7 +45,12 @@ in {
     inxi
     gh-dash
     signal-desktop
+    python3Full
+    poetry
+    rocmPackages.llvm.clang-unwrapped
+    libgccjit
     zoom-us
+    libgcc
     warp-terminal
     brave
     jq

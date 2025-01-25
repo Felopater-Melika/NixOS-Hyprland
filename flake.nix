@@ -2,7 +2,7 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -124,7 +124,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darkmatter-grub-theme = {
-      url = gitlab:VandalByte/darkmatter-grub-theme;
+      url = "gitlab:VandalByte/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

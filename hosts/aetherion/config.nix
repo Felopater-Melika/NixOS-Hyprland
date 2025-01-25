@@ -105,6 +105,8 @@ in {
     TERMINAL = "wezterm";
     VISUAL = "vscodium";
     GSK_RENDERER = "gl";
+    CC = "${pkgs.llvmPackages_15.clang}/bin/clang";
+    CXX = "${pkgs.llvmPackages_15.clang}/bin/clang++";
   };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

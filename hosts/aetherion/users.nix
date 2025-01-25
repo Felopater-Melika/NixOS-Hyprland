@@ -21,7 +21,7 @@ in {
       imports =
         if (host == "aetherion")
         then [../../modules/home-manager]
-        else [../../modules/home-manager/desktop.nix];
+        else [../../modules/home-manager/default.nix];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "25.05";
