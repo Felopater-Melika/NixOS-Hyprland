@@ -2,15 +2,11 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
-<<<<<<< HEAD
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-=======
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix = {
       url = "github:NixOS/nix/2.26-maintenance";
       inputs.nixpkgs.follows = "nixpkgs";
     };
->>>>>>> main
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
     nix-alien.url = "github:thiagokokada/nix-alien";

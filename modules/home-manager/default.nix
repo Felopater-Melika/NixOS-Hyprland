@@ -7,11 +7,8 @@
   imports = [
     ./home.nix
     ./git.nix
-<<<<<<< HEAD
     ./gtk.nix
-=======
     ./cava.nix
->>>>>>> main
     ./nixy.nix
     ./helix.nix
     ./fhsenv.nix
