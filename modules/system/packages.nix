@@ -77,5 +77,6 @@
     zoxide
     bibata-cursors
     firefox_nightly
+    vivid
   ];
 }

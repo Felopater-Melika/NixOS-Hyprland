@@ -22,7 +22,8 @@ in {
         pkgs.kdePackages.qtmultimedia
         pkgs.kdePackages.qtvirtualkeyboard
         (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
-            theme = "post-apocalyptic_hacker";
+            theme = "cyberpunk";
+
         })
     ];
     services.xserver.enable = true;
