@@ -2,8 +2,17 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
+<<<<<<< HEAD
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+=======
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix = {
+      url = "github:NixOS/nix/2.26-maintenance";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+>>>>>>> main
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    anyrun.url = "github:fufexan/anyrun/launch-prefix";
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     catppuccin.url = "github:catppuccin/nix";
@@ -19,7 +28,8 @@
     matugen = {
       url = "github:/InioX/Matugen";
     };
-
+    nvf.url = "github:notashelf/nvf";
+    yazi.url = "github:sxyazi/yazi";
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
@@ -128,6 +138,9 @@
       url = "gitlab:Felopater-Melika/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
   };
   outputs = inputs @ {
     self,
@@ -142,6 +155,7 @@
     for-all-systems,
     nix-github-actions,
     lix-module,
+    zjstatus,
     ...
   }: let
     system = "x86_64-linux";
@@ -213,6 +227,7 @@
               inputs.hyprpanel.overlay
               (final: prev: {
                 nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
+                zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
               })
             ];
           }

@@ -144,8 +144,12 @@ in {
     todoist-electron
     bibata-cursors
     firefox_nightly
+<<<<<<< HEAD
     # swaynotificationcenter
     gtkmm3
     gtkmm4
+=======
+    vivid
+>>>>>>> main
   ];
 }

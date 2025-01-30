@@ -7,7 +7,11 @@
   imports = [
     ./home.nix
     ./git.nix
+<<<<<<< HEAD
     ./gtk.nix
+=======
+    ./cava.nix
+>>>>>>> main
     ./nixy.nix
     ./helix.nix
     ./fhsenv.nix
@@ -22,6 +26,8 @@
     ./hyprpanel.nix
     ./variables.nix
     ./zathura.nix
+    ./anyrun/anyrun.nix
+    ./zellij/default.nix
     ./scripts/scripts.nix
     ./qt.nix
   ];

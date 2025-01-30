@@ -12,14 +12,19 @@
     hiddify-app
     github-cli
     neovide
+<<<<<<< HEAD
     # inputs.wezterm.packages.${pkgs.system}.default
+=======
+    wezterm
+    #inputs.wezterm.packages.${pkgs.system}.default
+>>>>>>> main
     inputs.zen-browser.packages."${pkgs.system}".default
     wezterm
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
     firedragon
-    yazi
+    inputs.yazi.packages.${pkgs.system}.default
     microfetch
     gpu-screen-recorder
     vscodium
