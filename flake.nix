@@ -2,7 +2,7 @@
   description = "MaotseNyein NixOS-Hyprland";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -67,7 +67,8 @@
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    # zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
@@ -124,7 +125,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darkmatter-grub-theme = {
-      url = "gitlab:VandalByte/darkmatter-grub-theme";
+      url = "gitlab:Felopater-Melika/darkmatter-grub-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -178,7 +179,6 @@
         };
       });
 
-    # Treefmt configuration for formatting
     treefmtEval = forAllSystems ({pkgs, ...}:
       inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";

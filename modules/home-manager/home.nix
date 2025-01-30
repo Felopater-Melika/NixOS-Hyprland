@@ -40,6 +40,7 @@
   programs.htop = {
     enable = true;
   };
+
   catppuccin.enable = true;
 
   home.file = {

@@ -13,9 +13,8 @@
     github-cli
     neovide
     # inputs.wezterm.packages.${pkgs.system}.default
-    # inputs.zen-browser.packages."${pkgs.system}".specific
-    wezterm
     inputs.zen-browser.packages."${pkgs.system}".default
+    wezterm
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
@@ -38,5 +37,6 @@
     tmux-sessionizer
     tmuxPlugins.sidebar
     gtk4
+    mangayomi
   ];
 }

@@ -18,18 +18,12 @@
     sf-mono-liga-bin
     font-awesome
     terminus_font
-    monaspace
-    jetbrains-mono
-    # caskaydia-cove
-    iosevka
-    # caskaydia-mono
-    # iosevka-term-slab
-    #     nerd-fonts.
-    # nerd-fonts.
-    # nerd-fonts.
-    # nerd-fonts.
-    # nerd-fonts.
-    # nerd-fonts.
+    nerd-fonts.monaspace
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.iosevka
+    nerd-fonts.caskaydia-mono
+    nerd-fonts.iosevka-term-slab
     iosevka-bin
   ];
 }

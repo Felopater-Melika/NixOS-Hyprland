@@ -16,12 +16,12 @@
   };
 
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
-  stylix.enable = true;
-  stylix.autoEnable = false;
+  #   stylix.enable = false;
+  #   stylix.autoEnable = false;
   stylix.targets.spicetify.enable = true;
   stylix.polarity = "dark";
   stylix.targets.gtk.enable = true;
-  stylix.targets.fish.enable = true;
+  stylix.targets.fish.enable = false;
   stylix.image = "/home/philo/Pictures/wallpapers/retro2_live.png";
   stylix = {
     fonts = {
@@ -33,16 +33,16 @@
 
       serif = {
         name = "JetBrainsMono Nerd Font";
-        package = pkgs.jetbrains-mono;
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
 
       sansSerif = {
         name = "JetBrainsMono Nerd Font";
-        package = pkgs.jetbrains-mono;
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
 
       monospace = {
-        package = pkgs.jetbrains-mono;
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
 

@@ -11,13 +11,13 @@
     fetchFromGitHub = pkgs.fetchFromGitHub;
   };
 in {
-  nixpkgs.overlays = [
-    (self: super: {
-      rocm-llvm-libcxx = super.rocm-llvm-libcxx.overrideAttrs (oldAttrs: {
-        doCheck = false;
-      });
-    })
-  ];
+  #   nixpkgs.overlays = [
+  #     (self: super: {
+  #       rocm-llvm-libcxx = super.rocm-llvm-libcxx.overrideAttrs (oldAttrs: {
+  #         doCheck = false;
+  #       });
+  #     })
+  #   ];
   environment.systemPackages = with pkgs; [
     (ags.overrideAttrs (oldAttrs: {
       inherit (oldAttrs) pname;
@@ -46,6 +46,14 @@ in {
     gh-dash
     signal-desktop
     python3Full
+    python312Packages.pip
+    python312Packages.requests
+    python312Packages.python-dotenv
+    gnome-keyring
+    alejandra
+    libreoffice
+    tor-browser
+    gitkraken
     poetry
     rocmPackages.llvm.clang-unwrapped
     libgccjit
@@ -136,5 +144,8 @@ in {
     todoist-electron
     bibata-cursors
     firefox_nightly
+    # swaynotificationcenter
+    gtkmm3
+    gtkmm4
   ];
 }
