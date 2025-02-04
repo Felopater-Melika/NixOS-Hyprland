@@ -81,6 +81,7 @@ in {
     polkit_gnome
     pyprland
     libsForQt5.qt5ct
+    kdePackages.full
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum #kvantum
