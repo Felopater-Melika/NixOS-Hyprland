@@ -48,33 +48,24 @@
     hyprsunset = {
       url = "github:hyprwm/hyprsunset";
     };
-    hy3 = {
-      url = "github:outfoxxed/hy3";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprscroller = {
-      url = "github:maotseantonio/hyprscroller-flake";
-      inputs.hyprland.follows = "hyprland";
-    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
-
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
     textfox.url = "github:maotseantonio/textfox";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
+    #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
       url = "github:MOIS3Y/nvchad4nix";
@@ -112,7 +103,6 @@
     self,
     nixpkgs,
     home-manager,
-    hy3,
     chaotic,
     darkmatter-grub-theme,
     lix-module,
