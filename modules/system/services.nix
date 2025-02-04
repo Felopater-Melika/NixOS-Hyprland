@@ -36,7 +36,19 @@
       enable = true;
       interval = "weekly";
     };
-
+    # ngrok = {
+    #   enable = true;
+    #   extraConfig = {};
+    #   extraConfigFiles = [
+    #     "~/.config/ngrok/ngrok.yml"
+    #   ];
+    #   tunnels = {
+    #     test = {
+    #       proto = "http";
+    #       addr = "1234";
+    #     };
+    #   };
+    # };
     libinput.enable = true;
     rpcbind.enable = false;
     nfs.server.enable = false;

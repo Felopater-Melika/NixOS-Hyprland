@@ -18,22 +18,12 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
-<<<<<<< HEAD
       pkgs.kdePackages.qtsvg
       pkgs.kdePackages.qtmultimedia
       pkgs.kdePackages.qtvirtualkeyboard
       (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
         theme = "purple_leaves";
       })
-=======
-        pkgs.kdePackages.qtsvg
-        pkgs.kdePackages.qtmultimedia
-        pkgs.kdePackages.qtvirtualkeyboard
-        (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
-            theme = "cyberpunk";
-
-        })
->>>>>>> main
     ];
     services.xserver.enable = true;
     services.displayManager.defaultSession = "hyprland-uwsm";

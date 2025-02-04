@@ -16,7 +16,8 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = ["dashboard" "windowtitle" "systray" "ram" "netstat"];
+          #   left = ["dashboard" "windowtitle" "systray" "ram" "netstat"];
+          left = ["dashboard" "windowtitle" "systray" "ram" "battery"];
           middle = ["workspaces"];
           right = ["cava" "media" "clock" "hypridle" "power"];
         };
@@ -62,7 +63,7 @@
       theme.bar.margin_top = "0.5em";
       theme.bar.layer = "overlay";
       theme.bar.opacity = 90;
-      theme.bar.scaling = 70;
+      theme.bar.scaling = 65;
       theme.osd.scaling = 80;
       theme.tooltip.scaling = 80;
       theme.notification.scaling = 80;

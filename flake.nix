@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    ngrok.url = "github:ngrok/ngrok-nix";
     nix = {
       url = "github:NixOS/nix/2.26-maintenance";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -152,6 +153,7 @@
     nix-github-actions,
     lix-module,
     zjstatus,
+    ngrok,
     ...
   }: let
     system = "x86_64-linux";
@@ -218,6 +220,7 @@
           darkmatter-grub-theme.nixosModule
           inputs.catppuccin.nixosModules.catppuccin
           lix-module.nixosModules.default
+          ngrok.nixosModules.ngrok
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay

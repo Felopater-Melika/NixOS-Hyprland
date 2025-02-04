@@ -54,7 +54,7 @@ in {
     libreoffice
     tor-browser
     gitkraken
-    poetry
+    # poetry
     rocmPackages.llvm.clang-unwrapped
     libgccjit
     zoom-us
@@ -86,6 +86,9 @@ in {
     qt6Packages.qtstyleplugin-kvantum #kvantum
     rofi-wayland
     slurp
+    bun
+    acpi
+    ngrok
     swappy
     swww
     unzip
@@ -104,7 +107,7 @@ in {
     gtk4
     fish
     atuin
-    bun
+    # bun
     deno
     nodejs_23
     pnpm
