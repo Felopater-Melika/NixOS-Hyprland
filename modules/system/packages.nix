@@ -32,14 +32,14 @@
     nwg-look # requires unstable channel
     # nwg-dock-hyprland
     wdisplays
-    nvtopPackages.full
+    # nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
     polkit_gnome
     pyprland
     libsForQt5.qt5ct
-    kdePackages.full
+    # kdePackages.full
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum #kvantum
@@ -77,7 +77,6 @@
     jetbrains-toolbox
     zoxide
     bibata-cursors
-        #    firefox_nightly
     vivid
   ];
 }
