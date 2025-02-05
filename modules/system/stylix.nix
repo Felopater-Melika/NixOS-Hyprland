@@ -15,8 +15,7 @@
     accent = "blue";
   };
 
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mocha.yaml";
-  #   stylix.enable = false;
+  stylix.base16Scheme = ./mocha.yaml; #   stylix.enable = false;
   #   stylix.autoEnable = false;
   stylix.targets.spicetify.enable = true;
   stylix.polarity = "dark";

@@ -147,7 +147,7 @@ in {
     zoxide
     todoist-electron
     bibata-cursors
-    firefox_nightly
+    # firefox_nightly
     # swaynotificationcenter
     gtkmm3
     gtkmm4
