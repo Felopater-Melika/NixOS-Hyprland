@@ -60,11 +60,11 @@
     };
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
-    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
+    #    Neve.url = "github:maotseantonio/Neve";
     #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
@@ -104,14 +104,13 @@
     nixpkgs,
     home-manager,
     chaotic,
-    darkmatter-grub-theme,
     lix-module,
     zjstatus,
     ...
   }: let
     system = "x86_64-linux";
-    host = "aetherion";
-    username = "philo";
+    host = "shizuru";
+    username = "antonio";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -132,7 +131,6 @@
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
-          darkmatter-grub-theme.nixosModule
           inputs.catppuccin.nixosModules.catppuccin
           lix-module.nixosModules.default
           {

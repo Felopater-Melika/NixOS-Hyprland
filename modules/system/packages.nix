@@ -19,7 +19,7 @@
     gnome-system-monitor
     file-roller
     grim
-    pwvucontrol_git
+    #  pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -58,12 +58,12 @@
     fd
     home-manager
     bluez-tools
-    wgpu-utils
+    #    wgpu-utils
     gtk3
     gtk4
     fish
     atuin
-    bun
+    #  bun
     dart-sass
     nodejs
     sassc
@@ -76,7 +76,7 @@
     spotify
     jetbrains-toolbox
     zoxide
-    bibata-cursors
+    # bibata-cursors
     vivid
   ];
 }
