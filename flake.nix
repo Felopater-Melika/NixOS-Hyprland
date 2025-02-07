@@ -61,12 +61,12 @@
     };
     textfox.url = "github:maotseantonio/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
-    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
+    #    Neve.url = "github:maotseantonio/Neve";
     #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nvchad4nix = {
@@ -207,7 +207,6 @@
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
-          darkmatter-grub-theme.nixosModule
           inputs.catppuccin.nixosModules.catppuccin
           lix-module.nixosModules.default
           ngrok.nixosModules.ngrok

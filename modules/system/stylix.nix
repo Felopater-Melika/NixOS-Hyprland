@@ -20,8 +20,9 @@
   stylix.targets.spicetify.enable = true;
   stylix.polarity = "dark";
   stylix.targets.gtk.enable = true;
-  stylix.targets.fish.enable = false;
-  stylix.image = "/home/philo/Pictures/wallpapers/retro2_live.png";
+  stylix.targets.fish.enable = true;
+  stylix.targets.nixos-icons.enable = true;
+  stylix.image = "/home/philo/Pictures/wallpapers/luffy1_catppuccin-mocha.png";
   stylix = {
     fonts = {
       sizes = {

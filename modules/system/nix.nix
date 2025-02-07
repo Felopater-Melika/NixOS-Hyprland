@@ -12,8 +12,8 @@
   nix = {
     package = pkgs.lix;
     settings = {
-      allowed-users = ["root" "@wheel" "antonio"];
-      trusted-users = ["root" "@wheel" "antonio" "@builders"];
+      allowed-users = ["root" "@wheel" "philo"];
+      trusted-users = ["root" "@wheel" "philo" "@builders"];
       warn-dirty = false;
       auto-optimise-store = true;
       experimental-features = [

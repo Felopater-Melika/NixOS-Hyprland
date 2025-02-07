@@ -71,12 +71,7 @@ config = {
     },
     {
       source = {
-<<<<<<< HEAD
         File = '/home/philo/.config/hypr/wallpaper_effects/.wallpaper_current',
-=======
-        File = '/home/antonio/.config/hypr/wallpaper_effects/.wallpaper_current',
-        --File = '/home/antonio/.config/wezterm/nixos.png',
->>>>>>> 5550348851d01d1e2136a29a29b243e558fef400
       },
       opacity = 0.05,
       vertical_align = "Middle",

@@ -36,7 +36,7 @@ in {
     prismlauncher
     file-roller
     grim
-    pwvucontrol_git
+    #  pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -103,11 +103,12 @@ in {
     fd
     home-manager
     bluez-tools
-    wgpu-utils
+    #    wgpu-utils
     gtk3
     gtk4
     fish
     atuin
+<<<<<<< HEAD
     # bun
     deno
     nodejs_23
@@ -128,6 +129,9 @@ in {
     nvd
     nix-output-monitor
     nix-prefetch
+=======
+    #  bun
+>>>>>>> main
     dart-sass
     nodejs
     sassc
@@ -145,12 +149,16 @@ in {
     # })
     sddmThemes.tokyo-night
     zoxide
+<<<<<<< HEAD
     todoist-electron
     bibata-cursors
     # firefox_nightly
     # swaynotificationcenter
     gtkmm3
     gtkmm4
+=======
+    # bibata-cursors
+>>>>>>> main
     vivid
   ];
 }

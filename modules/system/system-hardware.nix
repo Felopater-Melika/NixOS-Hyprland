@@ -21,27 +21,6 @@
     ];
   };
   # zram
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 30;
-    swapDevices = 1;
-    algorithm = "zstd";
-  };
-
-  systemd.oomd.enableRootSlice = true;
-  systemd.oomd.enableSystemSlice = true;
-  systemd.oomd.enableUserSlices = true;
-
-  hardware.openrazer.enable = true;
-  hardware.openrazer.users = ["philo"];
-
-  services.supergfxd.enable = true;
-  services.asusd = {
-    enable = true;
-    enableUserService = true;
-  };
-
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "schedutil";
@@ -70,9 +49,6 @@
       };
     };
   };
-
-  # Enable sound with pipewire.
-  #   services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
