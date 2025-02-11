@@ -13,22 +13,20 @@ zfs create -p -o mountpoint=legacy rpool/safe/persist
 
 mkfs.fat -F 32 -n boot /dev/nvme0n1p1
 mkswap -L swap /dev/nvme0n1p3
-swapon /dev/nvme0n1p3
 mount -t zfs rpool/local/root /mnt
-umount /mnt
 mkdir /mnt/{home,nix,persist}
 mount -t zfs rpool/local/nix /mnt/nix 
 mount -t zfs rpool/safe/home /mnt/home
 mount -t zfs rpool/safe/persist /mnt/persist
-
+zfs snapshot rpool/local/root@start
 mkdir /mnt/boot
 mount /dev/$BOOT_PARTITION /mnt/boot
 swapon /dev/$SWAP_PARTITION
 
 nixos-generate-config --root /mnt
-echo "umount -Rl /mnt"
-echo "zpool export -a"
-echo "head -c 8 /etc/machine-id"
+#echo "umount -Rl /mnt"
+#echo "zpool export -a"
+#echo "head -c 8 /etc/machine-id"
 
 
 

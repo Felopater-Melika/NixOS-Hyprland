@@ -148,5 +148,6 @@ in {
     gtkmm3
     gtkmm4
     vivid
+    spotube
   ];
 }

@@ -3,6 +3,7 @@
   lib,
   inputs,
   username,
+  pkgs,
   ...
 }: 
 with lib; let
@@ -13,8 +14,11 @@ in  {
   };
 
   config = mkIf cfg.enable {
- # Useful ZFS maintenance
-    services.zfs = {
+   # Useful ZFS maintenance
+   networking.hostId = "09050b1e";
+   boot.supportedFilesystems = [ "zfs" ];
+   boot.zfs.package = pkgs.zfs_cachyos;
+   services.zfs = {
       autoScrub = {
         enable = true;
         interval = "weekly";

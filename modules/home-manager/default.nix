@@ -10,7 +10,7 @@
     ./gtk.nix
     ./cava.nix
     ./nixy.nix
-#    ./helix.nix
+    #./helix.nix
     ./fhsenv.nix
     ./nvchad.nix
     ./textfox.nix
@@ -23,7 +23,8 @@
     ./hyprpanel.nix
     ./variables.nix
     ./zathura.nix
-  #  ./anyrun/anyrun.nix
+    ./hypridle.nix
+    #  ./anyrun/anyrun.nix
     ./zellij/default.nix
     ./scripts/scripts.nix
     ./qt.nix
