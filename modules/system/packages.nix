@@ -27,15 +27,20 @@ in {
     libinput
     libinput-gestures
     nautilus
+    softether
+    delta
     cliphist
     kdePackages.qtsvg
     kdePackages.qtmultimedia
     kdePackages.qtvirtualkeyboard
     eog
+    networkmanager-l2tp
     gnome-system-monitor
     prismlauncher
     file-roller
     grim
+    xl2tpd # L2TP daemon required
+    strongswan
     #  pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
@@ -74,14 +79,12 @@ in {
     nwg-look # requires unstable channel
     # nwg-dock-hyprland
     wdisplays
-    # nvtopPackages.full
     pamixer
     pavucontrol
     playerctl
     polkit_gnome
     pyprland
     libsForQt5.qt5ct
-    # kdePackages.full
     qt6ct
     qt6.qtwayland
     qt6Packages.qtstyleplugin-kvantum #kvantum
@@ -103,13 +106,11 @@ in {
     fd
     home-manager
     bluez-tools
-    #    wgpu-utils
     gtk3
     gtk4
     fish
     atuin
-<<<<<<< HEAD
-    # bun
+    bun
     deno
     nodejs_23
     pnpm
@@ -129,9 +130,6 @@ in {
     nvd
     nix-output-monitor
     nix-prefetch
-=======
-    #  bun
->>>>>>> main
     dart-sass
     nodejs
     sassc
@@ -140,25 +138,15 @@ in {
     telegram-desktop
     pre-commit
     vesktop
-    # papirus-folders
+    papirus-folders
     # papirus-icon-theme
     spotify
     jetbrains-toolbox
-    # (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
-    #   theme = "japanese_aesthetic";
-    # })
-    sddmThemes.tokyo-night
     zoxide
-<<<<<<< HEAD
     todoist-electron
     bibata-cursors
-    # firefox_nightly
-    # swaynotificationcenter
     gtkmm3
     gtkmm4
-=======
-    # bibata-cursors
->>>>>>> main
     vivid
   ];
 }

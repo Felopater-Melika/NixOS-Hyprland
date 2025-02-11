@@ -39,28 +39,14 @@ in {
               initrd ${pkgs.linuxPackages.kernel.out}/initrd
           }
         '';
-        #    theme = pkgs.catppuccin-grub;
-        #  dedsec-theme = {
-        #    enable = true;
-        #    style = "reaper";
-        #    icon = "color";
-        #    resolution = "1440p";
-        #};
-
-        darkmatter-theme = {
-          enable = true;
-          style = "nixos";
-          icon = "color";
-          resolution = "1440p";
-        };
+        theme = pkgs.catppuccin-grub;
+        # darkmatter-theme = {
+        #   enable = true;
+        #   style = "nixos";
+        #   icon = "color";
+        #   resolution = "1440p";
+        # };
       };
-      #   darkmatter-theme = {
-      #   enable = true;
-      #   style = "nixos";
-      #   icon = "color";
-      #   resolution = "1080p";
-      # };
-
       tmp = {
         useTmpfs = false;
         tmpfsSize = "30%";

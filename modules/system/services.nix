@@ -59,6 +59,11 @@
       enable = true;
       package = pkgs.hypridle;
     };
+
+    udev.packages = [
+      pkgs.android-udev-rules
+    ];
+
     # catppuccin.k9s = {
     #   enable = true;
     #   flavor = "mocha";

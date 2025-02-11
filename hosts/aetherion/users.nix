@@ -28,7 +28,15 @@ in {
       programs.home-manager.enable = true;
     };
   };
-
+  services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+  };
+  programs.rog-control-center.enable = true;
+  services.supergfxd.enable = true;
+  systemd.services.supergfxd.path = [pkgs.pciutils];
   users = {
     users."${username}" = {
       homeMode = "755";
@@ -42,6 +50,7 @@ in {
         "audio"
         "podman"
         "libvirtd"
+        "adbusers"
         "kvm"
         "disk"
         "kubernetes"
@@ -69,6 +78,8 @@ in {
   environment.shells = with pkgs; [fish];
   environment.systemPackages = with pkgs; [fzf];
   programs.fish.enable = true;
+  programs.adb.enable = true;
+
   programs.fish.interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';
