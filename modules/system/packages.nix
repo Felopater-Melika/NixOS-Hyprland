@@ -58,12 +58,12 @@
     fd
     home-manager
     bluez-tools
-    #    wgpu-utils
+    #wgpu-utils
     gtk3
     gtk4
     fish
     atuin
-    #  bun
+    bun
     dart-sass
     nodejs
     sassc
@@ -76,7 +76,8 @@
     spotify
     jetbrains-toolbox
     zoxide
-    # bibata-cursors
+    bibata-cursors
     vivid
+    spotube
   ];
 }

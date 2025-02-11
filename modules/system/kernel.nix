@@ -18,8 +18,8 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-       kernelPackages = pkgs.linuxPackages_cachyos;
-      consoleLogLevel = 0;
+      consoleLogLevel = 5;
+      kernelPackages = pkgs.linuxPackages_cachyos;
       kernelParams = [
         "quiet"
         "splash"
