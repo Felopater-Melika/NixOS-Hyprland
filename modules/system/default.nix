@@ -39,8 +39,9 @@
     ./cachix.nix
     ./packages.nix
     ./nix.nix
+    # ./coolify
     # ./btrfs.nix
     # ./zfs.nix
-    ./zram.nix
+    # ./zram.nix
   ];
 }

@@ -4,22 +4,28 @@
   inputs,
   username,
   ...
-}: 
+}:
 with lib; let
   cfg = config.system.zram;
-in  {
+in {
   options.system.zram = {
     enable = mkEnableOption "Enable zramSwap Modules";
   };
 
   config = mkIf cfg.enable {
+    swapDevices = [
+      {
+        device = "/swapfile";
+        size = 8192; # Size in MB for an 8GB swap file
+      }
+    ];
 
     zramSwap = {
-        enable = true;
-        priority = 100;
-        memoryPercent = 30;
-        swapDevices = 1;
-        algorithm = "zstd";
+      enable = true;
+      priority = 100;
+      memoryPercent = 50;
+      #   swapDevices = 1;
+      algorithm = "zstd";
     };
- };
+  };
 }

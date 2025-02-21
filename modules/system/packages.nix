@@ -4,20 +4,19 @@
   inputs,
   lib,
   chaotic,
+  android-nixpkgs,
+  system,
   ...
 }: let
-  sddmThemes = import ./../../pkgs/sddm.nix {
-    stdenv = pkgs.stdenv;
-    fetchFromGitHub = pkgs.fetchFromGitHub;
-  };
+  android-sdk = inputs.android-nixpkgs.sdk.${system} (sdkPkgs:
+    with sdkPkgs; [
+      cmdline-tools-latest
+      build-tools-34-0-0
+      platform-tools
+      platforms-android-34
+      emulator
+    ]);
 in {
-  #   nixpkgs.overlays = [
-  #     (self: super: {
-  #       rocm-llvm-libcxx = super.rocm-llvm-libcxx.overrideAttrs (oldAttrs: {
-  #         doCheck = false;
-  #       });
-  #     })
-  #   ];
   environment.systemPackages = with pkgs; [
     (ags.overrideAttrs (oldAttrs: {
       inherit (oldAttrs) pname;
@@ -114,11 +113,6 @@ in {
     deno
     nodejs_23
     pnpm
-    rustup
-    cargo
-    rust-analyzer
-    clippy
-    rustfmt
     httpie
     pipx
     rainfrog
@@ -126,8 +120,10 @@ in {
     lazydocker
     arion
     dive
-    podman-tui
+    # podman-tui
     nvd
+    discord
+    webcord
     nix-output-monitor
     nix-prefetch
     dart-sass
@@ -137,17 +133,35 @@ in {
     starship
     telegram-desktop
     pre-commit
+    helix
+    dotnet-sdk_9
     vesktop
     papirus-folders
+    perl
+    pkg-config
+    openssl
+    rdkafka
+    cyrus_sasl
+    zstd
     # papirus-icon-theme
     spotify
-    jetbrains-toolbox
+    ungoogled-chromium
+    # jetbrains-toolbox
     zoxide
+    devenv
     todoist-electron
     bibata-cursors
     gtkmm3
     gtkmm4
+    anydesk
     vivid
     spotube
+    jetbrains.webstorm
+    jetbrains.pycharm-professional
+    jetbrains.rust-rover
+    jetbrains.rider
+    android-tools
+    android-sdk
+    android-studio
   ];
 }

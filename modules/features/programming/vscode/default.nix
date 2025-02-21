@@ -100,11 +100,11 @@
       extensions.vscode-marketplace.nwolverson.ide-purescript
       extensions.vscode-marketplace.nwolverson.language-purescript
       # Rust
-      extensions.vscode-marketplace.zhangyue.rust-mod-generator
-      extensions.vscode-marketplace.dustypomerleau.rust-syntax
-      extensions.vscode-marketplace.lorenzopirro.rust-flash-snippets
-      extensions.vscode-marketplace.rust-lang.rust-analyzer
-      extensions.vscode-marketplace.swellaby.vscode-rust-test-adapter
+      #   extensions.vscode-marketplace.zhangyue.rust-mod-generator
+      #   extensions.vscode-marketplace.dustypomerleau.rust-syntax
+      #   extensions.vscode-marketplace.lorenzopirro.rust-flash-snippets
+      #   extensions.vscode-marketplace.rust-lang.rust-analyzer
+      #   extensions.vscode-marketplace.swellaby.vscode-rust-test-adapter
       # TOML
       extensions.vscode-marketplace.tamasfe.even-better-toml
     ];
@@ -131,7 +131,7 @@ in {
     pkgs.nodePackages.purty
 
     # Rust
-    pkgs.rustfmt
+    # pkgs.rustfmtss
     pkgs.leptosfmt
   ];
 }

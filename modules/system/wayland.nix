@@ -2,12 +2,10 @@
   inputs,
   pkgs,
   ...
-}:
-let
-    hyprFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-in
-{
+}: let
+  hyprFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  portalFlake = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+in {
   programs = {
     hyprland = {
       enable = true;
@@ -17,8 +15,8 @@ in
       xwayland.enable = true;
     };
     appimage = {
-        enable = true;
-        binfmt = true;
+      enable = true;
+      binfmt = true;
     };
     nix-ld.enable = true;
     waybar.enable = false;

@@ -79,7 +79,7 @@ in {
   environment.systemPackages = with pkgs; [fzf];
   programs.fish.enable = true;
   programs.adb.enable = true;
-
+  programs.direnv.enable = true;
   programs.fish.interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';

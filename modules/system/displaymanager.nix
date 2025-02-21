@@ -29,7 +29,7 @@ in {
     services.displayManager.defaultSession = "hyprland-uwsm";
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.
-      package = pkgs.kdePackages.sddm;
+      package = lib.mkForce pkgs.kdePackages.sddm;
       extraPackages = with pkgs; [
         kdePackages.qtsvg
         kdePackages.qtmultimedia

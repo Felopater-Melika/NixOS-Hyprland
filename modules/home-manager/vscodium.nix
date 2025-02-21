@@ -29,7 +29,7 @@
       naumovs.color-highlight
       oderwat.indent-rainbow
       redhat.vscode-yaml
-      rust-lang.rust-analyzer
+      #   rust-lang.rust-analyzer
       svelte.svelte-vscode
       tamasfe.even-better-toml
       usernamehw.errorlens
@@ -85,7 +85,7 @@
         "editor.codeActionsOnSave"."source.fixAll" = "always";
         "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'monospace', monospace";
         "editor.fontLigatures" = true;
-        "editor.fontSize" = 17;
+        "editor.fontSize" = 18;
         "editor.fontWeight" = "600";
         "editor.formatOnPaste" = true;
         "editor.formatOnSave" = true;
@@ -118,7 +118,7 @@
         "workbench.editor.empty.hint" = "hidden";
         "workbench.sideBar.location" = "left";
         "workbench.startupEditor" = "none";
-        "workbench.editor.showTabs" = "single";
+        "workbench.editor.showTabs" = "multiple";
         "workbench.tree.indent" = 16;
         "workbench.statusBar.visible" = false;
         "workbench.layoutControl.type" = "menu";

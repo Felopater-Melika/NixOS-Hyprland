@@ -7,6 +7,7 @@
   lib,
   inputs,
   system,
+  darkmatter-theme,
   ...
 }:
 with lib; let
@@ -39,13 +40,13 @@ in {
               initrd ${pkgs.linuxPackages.kernel.out}/initrd
           }
         '';
-        theme = pkgs.catppuccin-grub;
-        # darkmatter-theme = {
-        #   enable = true;
-        #   style = "nixos";
-        #   icon = "color";
-        #   resolution = "1440p";
-        # };
+        # theme = pkgs.catppuccin-grub;
+        darkmatter-theme = {
+          enable = true;
+          style = "nixos";
+          icon = "color";
+          resolution = "1440p";
+        };
       };
       tmp = {
         useTmpfs = false;

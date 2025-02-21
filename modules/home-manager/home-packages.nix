@@ -6,11 +6,10 @@
 }: {
   home.packages = with pkgs; [
     nitch
-    rustup
     github-cli
     neovide
     wezterm
-    hyprpicker 
+    hyprpicker
     protonvpn-gui
     hiddify-app
     #cargo

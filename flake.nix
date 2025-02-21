@@ -22,6 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     matugen = {
       url = "github:/InioX/Matugen";
     };
@@ -144,6 +148,7 @@
     lix-module,
     zjstatus,
     ngrok,
+    android-nixpkgs,
     ...
   }: let
     system = "x86_64-linux";
@@ -200,6 +205,7 @@
           inherit username;
           inherit host;
           inherit chaotic;
+          inherit android-nixpkgs;
         };
         modules = [
           ./hosts/${host}/config.nix
@@ -208,6 +214,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
+          inputs.darkmatter-grub-theme.nixosModule
           lix-module.nixosModules.default
           ngrok.nixosModules.ngrok
           {

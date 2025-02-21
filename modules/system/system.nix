@@ -19,7 +19,6 @@
     ];
     randomizedDelaySec = "45min";
   };
-
   environment.systemPackages = with pkgs; [
     wget
     git

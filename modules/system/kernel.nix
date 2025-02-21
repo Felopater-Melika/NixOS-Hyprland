@@ -19,28 +19,35 @@ in {
   config = mkIf cfg.enable {
     boot = {
       consoleLogLevel = 5;
+      kernel.sysctl = {
+        "net.ipv4.ip_unprivileged_port_start" = 80;
+      };
       kernelPackages = pkgs.linuxPackages_cachyos;
       kernelParams = [
+        # "quiet"
+        # "splash"
+        # "boot.shell_on_fail"
+        # "loglevel=3"
+        # "rd.udev.log_level=3"
+        # "rd.systemd.show_status=false"
+        # "udev.log_priority=3"
+        # "systemd.mask=systemd-vconsole-setup.service"
+        # "systemd.mask=dev-tpmrm0.device"
+        "nowatchdog"
+        # "amdgpu.dc=1"
+        "plymouth.enable=1"
         "quiet"
         "splash"
-        "boot.shell_on_fail"
         "loglevel=3"
-        "rd.udev.log_level=3"
-        "rd.systemd.show_status=false"
-        "udev.log_priority=3"
-        "systemd.mask=systemd-vconsole-setup.service"
-        "systemd.mask=dev-tpmrm0.device"
-        "nowatchdog"
         "amdgpu.dc=1"
-        "modprobe.blacklist=iTCO_wdt"
-        "plymouth.enable=1"
+        "mem_sleep_default=deep"
       ];
       kernelModules = ["v4l2loopback"];
       extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
       initrd = {
         verbose = false;
-        availableKernelModules = ["xhci_pci" "ahci" "amdgpu" "snd_hda_intel" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        kernelModules = [ "amdgpu" "snd_hda_intel"];
+        availableKernelModules = ["xhci_pci" "ahci" "amdgpu" "nvme" "usb_storage" "usbhid" "sd_mod"];
+        kernelModules = ["amdgpu" "asus_wmi" "asus_nb_wmi"];
       };
     };
   };

@@ -15,7 +15,7 @@
     theme = "catppuccin_mocha";
     layout = {
       "bar.layouts" = {
-        "0" = {
+        "1" = {
           left = ["dashboard" "windowtitle" "systray" "ram" "netstat"];
           middle = ["workspaces"];
           right = ["cava" "media" "clock" "hypridle" "power"];
