@@ -35,6 +35,28 @@ in {
     prismlauncher
     file-roller
     grim
+    devbox
+    gitflow
+    lavat
+    boxes
+    blanket
+    ponysay
+    nyancat
+    pokeget-rs
+    sl
+    pokemonsay
+    zellij
+    du-dust
+    skim
+    fd
+    ripgrep
+    jq
+    lolcat
+    tty-clock
+    cmatrix
+    xdragon
+    toilet
+    fortune
     protonvpn-gui
     hiddify-app
     #  pwvucontrol_git
