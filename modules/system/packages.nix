@@ -140,6 +140,9 @@ in {
     perl
     pkg-config
     openssl
+    gnumake
+    ninja
+    cmake
     rdkafka
     cyrus_sasl
     zstd
