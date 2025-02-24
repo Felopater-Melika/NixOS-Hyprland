@@ -18,11 +18,10 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      consoleLogLevel = 5;
-      kernel.sysctl = {
-        "net.ipv4.ip_unprivileged_port_start" = 80;
-      };
+      #   consoleLogLevel = 5;
       kernelPackages = pkgs.linuxPackages_cachyos;
+      #kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
+      consoleLogLevel = 0;
       kernelParams = [
         # "quiet"
         # "splash"

@@ -18,10 +18,7 @@
     ]);
 in {
   environment.systemPackages = with pkgs; [
-    (ags.overrideAttrs (oldAttrs: {
-      inherit (oldAttrs) pname;
-      version = "1.8.2";
-    }))
+    ags_1
     brightnessctl # for brightness control
     libinput
     libinput-gestures
@@ -38,9 +35,11 @@ in {
     prismlauncher
     file-roller
     grim
+    protonvpn-gui
+    hiddify-app
+    #  pwvucontrol_git
     xl2tpd # L2TP daemon required
     strongswan
-    #  pwvucontrol_git
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -158,7 +157,9 @@ in {
     gtkmm4
     anydesk
     vivid
-    spotube
+    (pkgs.callPackage ../../pkgs/nitch.nix {})
+    nurl
+    firefox_nightly
     jetbrains.webstorm
     jetbrains.pycharm-professional
     jetbrains.rust-rover

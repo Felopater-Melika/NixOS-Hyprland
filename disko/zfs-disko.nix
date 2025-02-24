@@ -1,8 +1,4 @@
-{
-  disks ? [ "/dev/nvme0n1" ],
-  ...
-}:
-{
+{disks ? ["/dev/nvme0n1"], ...}: {
   disko.devices = {
     disk = {
       main = {
@@ -27,6 +23,13 @@
                 pool = "zroot";
               };
             };
+            swap = {
+              size = "16G";
+              content = {
+              type = "swap";
+              resumeDevice = true;
+            };
+           };
           };
         };
       };

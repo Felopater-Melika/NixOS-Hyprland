@@ -5,23 +5,19 @@
   ...
 }: {
   home.packages = with pkgs; [
+    #rustup
     nitch
     github-cli
     neovide
     wezterm
     hyprpicker
-    protonvpn-gui
-    hiddify-app
-    #cargo
-    #inputs.wezterm.packages.${pkgs.system}.default
-    #inputs.zen-browser.packages."${pkgs.system}".default
+    hyprpanel
     inputs.nyxexprs.packages.${pkgs.system}.ani-cli
     inputs.ags.packages.${pkgs.system}.agsFull
     inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
-    #yazi
-    #inputs.Neve.packages.${pkgs.system}.default
-    inputs.yazi.packages.${pkgs.system}.default
+    #inputs.zen-browser.packages."${system}".twilight
     microfetch
+    inputs.yazi.packages.${pkgs.system}.yazi
     gpu-screen-recorder
     libqalculate
     dbus-glib
@@ -31,6 +27,5 @@
     mangareader
     tmux
     gtk4
-    #lunarvim
   ];
 }

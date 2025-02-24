@@ -10,8 +10,13 @@
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-alien.url = "github:thiagokokada/nix-alien";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     disko = {
       url = "github:nix-community/disko";
@@ -63,11 +68,19 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
     };
+    custom-nixpkgs = {
+      url = "github:maotseantonio/custom-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     textfox.url = "github:maotseantonio/textfox";
-    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.0&submodules=1";
-    stylix.url = "github:danth/stylix";
+    hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     wezterm.url = "github:wez/wezterm?dir=nix";
-    # zen-browser.url = "github:MarceColl/zen-browser-flake";
+    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nyxexprs.url = "github:notashelf/nyxexprs";
     #    Neve.url = "github:maotseantonio/Neve";
@@ -78,7 +91,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvchad-on-steroids = {
-      # <- here
       url = "github:maotseantonio/nvchad_config";
       flake = false;
     };
@@ -86,7 +98,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -149,6 +160,7 @@
     zjstatus,
     ngrok,
     android-nixpkgs,
+    nixos-hardware,
     ...
   }: let
     system = "x86_64-linux";
@@ -217,6 +229,7 @@
           inputs.darkmatter-grub-theme.nixosModule
           lix-module.nixosModules.default
           ngrok.nixosModules.ngrok
+          nixos-hardware.nixosModules.asus-zephyrus-ga402
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
