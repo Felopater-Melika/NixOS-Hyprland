@@ -18,8 +18,10 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      consoleLogLevel = 5;
+      #   consoleLogLevel = 5;
       kernelPackages = pkgs.linuxPackages_cachyos;
+      #kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
+      consoleLogLevel = 0;
       kernelParams = [
         "quiet"
         "splash"
@@ -40,7 +42,7 @@ in {
       initrd = {
         verbose = false;
         availableKernelModules = ["xhci_pci" "ahci" "amdgpu" "snd_hda_intel" "nvme" "usb_storage" "usbhid" "sd_mod"];
-        kernelModules = [ "amdgpu" "snd_hda_intel"];
+        kernelModules = ["amdgpu" "snd_hda_intel"];
       };
     };
   };

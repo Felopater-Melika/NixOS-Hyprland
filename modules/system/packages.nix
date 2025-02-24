@@ -7,10 +7,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    (ags.overrideAttrs (oldAttrs: {
-      inherit (oldAttrs) pname;
-      version = "1.8.2";
-    }))
+    ags_1
     brightnessctl # for brightness control
     libinput
     libinput-gestures
@@ -19,7 +16,10 @@
     gnome-system-monitor
     file-roller
     grim
+    protonvpn-gui
+    hiddify-app
     #  pwvucontrol_git
+
     gtk-engine-murrine #for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
@@ -78,6 +78,8 @@
     zoxide
     bibata-cursors
     vivid
-    spotube
+    (pkgs.callPackage ../../pkgs/nitch.nix {})
+    nurl
+    firefox_nightly
   ];
 }
