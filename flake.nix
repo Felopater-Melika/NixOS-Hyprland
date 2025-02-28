@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nix = {
       url = "github:NixOS/nix/2.26-maintenance";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +18,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
+    walker.url = "github:abenz1267/walker";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,7 +69,7 @@
       url = "github:maotseantonio/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    textfox.url = "github:maotseantonio/textfox";
+    textfox.url = "github:adriankarlen/textfox";
     hyprland.url = "git+https://github.com/hyprwm/hyprland?ref=refs/tags/v0.47.2&submodules=1";
     stylix = {
       url = "github:danth/stylix";
@@ -76,6 +78,10 @@
     };
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+        url =  "github:danth/stylix";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.home-manager.follows = "home-manager";
+     };
     nyxexprs.url = "github:notashelf/nyxexprs";
     #    Neve.url = "github:maotseantonio/Neve";
     #walker.url = "github:abenz1267/walker";
@@ -113,6 +119,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-master,
     home-manager,
     chaotic,
     lix-module,

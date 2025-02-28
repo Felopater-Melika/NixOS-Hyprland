@@ -33,7 +33,8 @@
     # nwg-dock-hyprland
     wdisplays
     # nvtopPackages.full
-    pamixer
+    inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
+    inputs.walker.packages.${pkgs.system}.default
     pavucontrol
     playerctl
     polkit_gnome
