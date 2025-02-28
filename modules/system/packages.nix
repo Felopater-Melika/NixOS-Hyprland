@@ -29,6 +29,7 @@ in {
     kdePackages.qtsvg
     kdePackages.qtmultimedia
     kdePackages.qtvirtualkeyboard
+    zed
     eog
     networkmanager-l2tp
     gnome-system-monitor
@@ -110,7 +111,6 @@ in {
     qt6Packages.qtstyleplugin-kvantum #kvantum
     rofi-wayland
     slurp
-    bun
     acpi
     ngrok
     swappy
@@ -134,6 +134,11 @@ in {
     deno
     nodejs_23
     pnpm
+    rustup
+    cargo
+    clippy
+    rustfmt
+    rust-analyzer
     httpie
     pipx
     rainfrog
@@ -174,14 +179,17 @@ in {
     zoxide
     devenv
     todoist-electron
-    bibata-cursors
+    # bibata-cursors
     gtkmm3
     gtkmm4
     anydesk
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
     nurl
-    firefox_nightly
+    # firefox_nightly
+    firefox
+    microsoft-edge
+    lazygit
     jetbrains.webstorm
     jetbrains.pycharm-professional
     jetbrains.rust-rover

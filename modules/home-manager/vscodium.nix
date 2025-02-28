@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       alefragnani.project-manager
       astro-build.astro-vscode
       bradlc.vscode-tailwindcss
@@ -38,7 +38,7 @@
       ms-vscode.live-server
       visualstudioexptteam.vscodeintellicode
     ];
-    keybindings = [
+    profiles.default.keybindings = [
       {
         "key" = "ctrl+`";
         "command" = "workbench.action.terminal.focus";
@@ -55,7 +55,7 @@
         "when" = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
       }
     ];
-    userSettings = let
+    profiles.default.userSettings = let
       general = {
         "extensions.autoCheckUpdates" = false;
         "extensions.autoUpdate" = false;
@@ -195,7 +195,8 @@
 
       # Language specific settings
       language = {
-        # go
+        # go    # source= $UserConfigs/hyprscroller.conf
+
         "go.alternateTools" = {
           "delve" = "${pkgs.delve}/bin/dlv";
           "gofumpt" = "${pkgs.gofumpt}/bin/gofumpt";
