@@ -20,7 +20,6 @@ in {
     boot = {
       #   consoleLogLevel = 5;
       kernelPackages = pkgs.linuxPackages_cachyos;
-      #kernelPackages = pkgs.zfs.latestCompatibleLinuxPackages;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"
@@ -35,6 +34,7 @@ in {
         "nowatchdog"
         "amdgpu.dc=1"
         "modprobe.blacklist=iTCO_wdt"
+        "nohibernate"
         "plymouth.enable=1"
       ];
       kernelModules = ["v4l2loopback"];
