@@ -23,7 +23,7 @@
     ./variables.nix
     ./zathura.nix
     ./hypridle.nix
-    ./anyrun
+    #./anyrun
     ./zellij/default.nix
     ./scripts/scripts.nix
     ./qt.nix

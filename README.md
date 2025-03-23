@@ -38,8 +38,11 @@
    <img src="./.github/assets/screenshots/4.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/5.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/6.jpg" style="margin-bottom: 10px;"/> <br>  
+   <img src="./.github/assets/screenshots/7.png" style="margin-bottom: 10px;"/> <br>
+   <img src="./.github/assets/screenshots/8.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;"/> <br>
-   Screenshots last updated <b>2024-12-26</b>
+
+  Screenshots last updated <b>2025-3-3</b>
 </p>
 
 
@@ -94,8 +97,8 @@
 |                             | NixOS + Hyprland                                                                              |
 | --------------------------- | :---------------------------------------------------------------------------------------------:
 | **Window Manager**          | [Hyprland] |
-| **Bar**                     | HyprPanel |
-| **Application Launcher**    | [rofi] |
+| **Bar**                     | [HyprPanel] |
+| **Application Launcher**    | [walker] |
 | **Notification Daemon**     | ags|
 | **Terminal Emulator**       | Wezterm + kitty |
 | **Shell**                   | fish + atuin + [Starship] |
@@ -303,10 +306,11 @@ Other dotfiles that I learned / copy from:
 
 <!-- Links -->
 [Hyprland]: https://github.com/hyprwm/Hyprland
+[HyprPanel]: https://github.com/Jas-SinghFSU/HyprPanel
 [Wezterm]: https://wezfurlong.org/wezterm/index.html
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar
-[rofi]: https://github.com/lbonn/rofi
+[walker]: https://github.com/abenz1267/walker
 [Btop]: https://github.com/aristocratos/btop
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi

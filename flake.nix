@@ -173,6 +173,10 @@
       inherit system;
       config.allowUnfree = true;
     };
+    pkgs-master = import nixpkgs-master {
+      inherit system;
+      config.allowUnfree = true;
+    };
 
     # Helper function to apply configurations to all systems.
     systems = ["x86_64-linux" "aarch64-darwin"];

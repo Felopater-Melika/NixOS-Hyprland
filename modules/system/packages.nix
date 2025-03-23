@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-master,
   config,
   inputs,
   lib,
@@ -17,6 +18,10 @@
       emulator
     ]);
 in {
+  _module.args.pkgs-master = import inputs.nixpkgs-master {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
   environment.systemPackages = with pkgs; [
     ags_1
     brightnessctl # for brightness control
@@ -102,7 +107,8 @@ in {
     wdisplays
     pamixer
     # nvtopPackages.full
-    # inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
+    #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
+    # pkgs-master.pamixer
     # inputs.walker.packages.${pkgs.system}.default
     pavucontrol
     playerctl
@@ -121,6 +127,8 @@ in {
     unzip
     wallust
     wl-clipboard
+    protobuf
+    protolint
     wlogout
     yad
     yt-dlp
