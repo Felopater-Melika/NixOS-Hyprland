@@ -3,7 +3,14 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  pointer = config.home.pointerCursor;
+in {
+  home.sessionVariables = {
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+  };
+  home.packages = [pkgs.wl-clipboard];
   wayland.windowManager.hyprland = {
     enable = true;
     #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -28,22 +35,33 @@
     source= $UserConfigs/UserSettings.conf
     source= $UserConfigs/WorkspaceRules.conf
     source= $HOME/.config/hypr/themes/mocha.conf
+    source = $HOME/.config/hypr/UserConfigs/hyprscroller.conf
+    $mainMod = SUPER
   '';
-
+  wayland.windowManager.hyprland.settings.bind = [
+    "SUPER, tab, exec, ${pkgs.ags_1}/bin/ags -t 'overview' "
+  ];
+  wayland.windowManager.hyprland.settings.exec-once = [
+    "uwsm finalize"
+    "${pkgs.hyprpanel}/bin/hyprpanel"
+    "hyprctl setcursor ${pointer.name} 32"
+    "wl-paste --type text --watch cliphist store"
+    "wl-paste --type image --watch cliphist store"
+  ];
   wayland.windowManager.hyprland = {
     plugins = [
       #inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.borders-plus-plus
       #inputs.hyprscroller.packages.${pkgs.stdenv.hostPlatform.system}.hyprscroller
-      #   (pkgs.hyprlandPlugins.hyprscroller.overrideAttrs {
-      #     src = pkgs.fetchFromGitHub {
-      #       owner = "dawsers";
-      #       repo = "hyprscroller";
-      #       rev = "686bf83316be96cbaed980b63ad43514cf0dce3c";
-      #       hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
+      # (pkgs.pkgs-master.hyprlandPlugins.hyprscroller.overrideAttrs {
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "dawsers";
+      #     repo = "hyprscroller";
+      #     rev = "3f86916f3e9a583154b1be0af4e8a1ef1f7435b2";
+      #     hash = "sha256-OYCcIsE25HqVBp8z76Tk1v+SuYR7W1nemk9mDS9GHM8=";
       #     };
-      #   })
+      #  })
       pkgs.hyprlandPlugins.borders-plus-plus
-      #pkgs.hyprlandPlugins.hyprscroller
+      pkgs.hyprlandPlugins.hyprscroller
     ];
   };
 }

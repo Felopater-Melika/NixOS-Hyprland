@@ -18,6 +18,11 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [
+      #  (pkgs.callPackage ../../pkgs/sddm-astronaut-theme.nix {
+      #      theme = "cybermonk";
+      #  })
+      pkgs.lyra-cursors
+      inputs.hyprddm.packages.${pkgs.system}.default
       pkgs.kdePackages.qtsvg
       pkgs.kdePackages.qtmultimedia
       pkgs.kdePackages.qtvirtualkeyboard
@@ -40,6 +45,7 @@ in {
       settings = {
         Theme = {
           CursorTheme = "catppuccin-mocha-dark-cursors";
+          # CursorTheme = "LyraR-cursors";
         };
       };
     };
@@ -49,6 +55,11 @@ in {
         prettyName = "Hyprland";
         comment = "Hyprland compositor manager by UWSM";
         binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+      niri = {
+        prettyName = "Niri The Goat";
+        comment = "Niri";
+        binPath = "/run/current-system/sw/bin/niri-session";
       };
     };
   };

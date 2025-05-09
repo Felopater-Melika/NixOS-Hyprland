@@ -7,6 +7,7 @@
   options,
   lib,
   inputs,
+  outputs,
   system,
   ...
 }: let
@@ -37,6 +38,10 @@ in {
           cp -R $src/*.otf $out/share/fonts/opentype/
         '';
       };
+      pkgs-master = import inputs.nixpkgs-master {
+        system = final.system;
+        config.allowUnfree = true;
+      };
     })
   ];
 
@@ -51,21 +56,20 @@ in {
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
-  system.bootloader.enable = true;
+  system.bootloader-systemd.enable = true;
+  system.bootloader-grub.enable = false;
   system.plymouth.enable = true;
   system.audio.enable = true;
   system.displayManager.enable = true;
   system.powermanagement.enable = true;
   system.scheduler.enable = true;
-  system.btrfs.enable = false;
+  #system.btrfs.enable = false;
   system.zfs.enable = true;
   system.zram.enable = true;
   #boot.loader.systemd-boot.enable = true;
   #boot.loader.efi.canTouchEfiVariables = true;
   catppuccin.tty.enable = true;
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
-    #boot.supportedFilesystems = [ "zfs" ];
-    #boot.initrd.supportedFilesystems = [ "zfs" ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
   users = {
@@ -81,7 +85,7 @@ in {
       vaapiVdpau
       mesa
       egl-wayland
-      waybar # if wanted experimental next line
+      pkgs-master.waybar # if wanted experimental next line
       #(pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
     ])
     ++ [
@@ -103,6 +107,7 @@ in {
     TERMINAL = "wezterm";
     VISUAL = "vscodium";
     GSK_RENDERER = "gl";
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
   system.stateVersion = "25.05"; # Did you read the comment?
 }

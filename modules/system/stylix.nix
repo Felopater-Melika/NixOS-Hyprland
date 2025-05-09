@@ -8,6 +8,22 @@
   inputs,
   system,
   ...
+}:
+{
+  stylix.enable = true;
+  stylix.autoEnable = false;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+  stylix = {
+      targets = {
+          gtk.enable = true;
+          nixos-icons.enable = true;
+          #kitty.enable = true;
+          #ghostty.enable = true;
+          #wezterm.enable = true;
+      };
+  };
+  stylix.polarity = "dark";
+  stylix.image = "/home/antonio/Pictures/wallpapers/Catpuccin_carv1.png";
 }: {
   catppuccin = {
     # enable = true;
@@ -32,18 +48,18 @@
       };
 
       serif = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "CaskaydiaCove Nerd Font";
+        package = pkgs.nerd-fonts.caskaydia-cove;
       };
 
       sansSerif = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "CaskaydiaCove Nerd Font";
+        package = pkgs. nerd-fonts.caskaydia-cove;
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs. nerd-fonts.caskaydia-cove;
+        name = "CaskaydiaCove Nerd Font";
       };
 
       emoji = {

@@ -4,6 +4,7 @@
   config,
   inputs,
   lib,
+  options,
   chaotic,
   android-nixpkgs,
   system,
@@ -22,6 +23,7 @@ in {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
   environment.systemPackages = with pkgs; [
     ags_1
     brightnessctl # for brightness control
@@ -99,11 +101,11 @@ in {
     catppuccin-kvantum
     libsForQt5.qtstyleplugin-kvantum
     kitty
-    libsForQt5.qtstyleplugin-kvantum #kvantum
+    libsForQt5.qtstyleplugin-kvantum # kvantum
     networkmanagerapplet
     catppuccin-cursors.mochaDark
     nwg-look # requires unstable channel
-    # nwg-dock-hyprland
+    nwg-dock-hyprland
     wdisplays
     pamixer
     # nvtopPackages.full
@@ -117,7 +119,7 @@ in {
     libsForQt5.qt5ct
     qt6ct
     qt6.qtwayland
-    qt6Packages.qtstyleplugin-kvantum #kvantum
+    qt6Packages.qtstyleplugin-kvantum # kvantum
     rofi-wayland
     slurp
     acpi
@@ -137,6 +139,7 @@ in {
     fd
     home-manager
     bluez-tools
+    wgpu-utils
     gtk3
     gtk4
     fish
@@ -197,7 +200,9 @@ in {
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
     nurl
-    # firefox_nightly
+    # socat
+    pkgs.lua52Packages.cjson
+    pkgs.lua52Packages.luautf8
     firefox
     microsoft-edge
     lazygit

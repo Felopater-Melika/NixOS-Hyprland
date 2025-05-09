@@ -9,9 +9,8 @@ in {
   programs = {
     hyprland = {
       enable = true;
-      #withUWSM  = true;
       package = pkgs.hyprland;
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      portalPackage = portalFlake; 
       xwayland.enable = true;
     };
     appimage = {
@@ -21,7 +20,7 @@ in {
     nix-ld.enable = true;
     waybar.enable = false;
     hyprlock.enable = true;
-    #firefox.enable = true;
+    firefox.enable = true;
     git.enable = true;
     nm-applet.indicator = true;
     thunar.enable = true;
@@ -43,7 +42,6 @@ in {
     #};
 
     xwayland.enable = true;
-
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;

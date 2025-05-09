@@ -23,7 +23,7 @@
     wget
     git
     baobab
-    # btrfs-progs
+    #btrfs-progs
     clang
     curl
     cpufrequtils
