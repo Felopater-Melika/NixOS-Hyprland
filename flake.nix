@@ -6,9 +6,9 @@
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nix = {
-       url = "github:NixOS/nix/2.28.1";
-       inputs.nixpkgs.follows = "nixpkgs";
-     };
+      url = "github:NixOS/nix/2.28.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # lix = {
     #   url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
     #   inputs = {
@@ -50,12 +50,12 @@
       flake = false;
     };
     niri = {
-     url = "github:sodiboo/niri-flake";
-     inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     astal-bar = {
-        url = "github:linuxmobile/astal-bar";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:linuxmobile/astal-bar";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
       url = "github:aylur/ags";
@@ -94,8 +94,8 @@
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
     #fabric.url = "github:Fabric-Development/fabric";
     hyprscroller = {
-        url = "github:maotseantonio/hyprscroller-flake";
-        inputs.hyprland.follows = "hyprland";
+      url = "github:maotseantonio/hyprscroller-flake";
+      inputs.hyprland.follows = "hyprland";
     };
     hyprddm.url = "github:maotseantonio/hyprddm";
     stylix = {
@@ -105,47 +105,46 @@
     };
     # wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-        url =  "github:danth/stylix";
-        inputs.nixpkgs.follows = "nixpkgs";
-        inputs.home-manager.follows = "home-manager";
-     };
-     ax-shell.url = "github:maotseantonio/AX-Shell";
-    nyxexprs.url = "github:notashelf/nyxexprs";
-    #    Neve.url = "github:maotseantonio/Neve";
-    #walker.url = "github:abenz1267/walker";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nvchad4nix = {
-      url = "github:MOIS3Y/nvchad4nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nvchad-on-steroids = {
-      url = "github:maotseantonio/nvchad_config";
-      flake = false;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nh.url = "github:viperML/nh";
-    nur = {
-        url = "github:nix-community/NUR";
-        inputs.nixpkgs.follows = "nixpkgs";
-     };
-         lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    darkmatter-grub-theme = {
-      url = gitlab:VandalByte/darkmatter-grub-theme;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zjstatus = {
-      url = "github:dj95/zjstatus";
-    };
+    url = "github:danth/stylix";
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.home-manager.follows = "home-manager";
+  };
+  ax-shell.url = "github:maotseantonio/AX-Shell";
+  nyxexprs.url = "github:notashelf/nyxexprs";
+  #    Neve.url = "github:maotseantonio/Neve";
+  #walker.url = "github:abenz1267/walker";
+  nix-flatpak.url = "github:gmodena/nix-flatpak";
+  nvchad4nix = {
+    url = "github:MOIS3Y/nvchad4nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  nvchad-on-steroids = {
+    url = "github:maotseantonio/nvchad_config";
+    flake = false;
+  };
+  home-manager = {
+    url = "github:nix-community/home-manager";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  spicetify-nix = {
+    url = "github:Gerg-L/spicetify-nix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  nh.url = "github:viperML/nh";
+  nur = {
+    url = "github:nix-community/NUR";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  lix-module = {
+    url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  darkmatter-grub-theme = {
+    url = gitlab:VandalByte/darkmatter-grub-theme;
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+  zjstatus = {
+    url = "github:dj95/zjstatus";
   };
   outputs = inputs @ {
     self,
@@ -170,10 +169,10 @@
       config.allowUnfree = true;
     };
     pkgs-master = import nixpkgs-master {
-        inherit system;
-        config.allowUnfree = true;
+      inherit system;
+      config.allowUnfree = true;
     };
-    in {
+  in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -200,10 +199,10 @@
               inputs.niri.overlays.niri
               nur.overlays.default
               (final: prev: {
-                 stable = import nixpkgs-stable {
-                 config.allowUnfree = true;
-                 config.nvidia.acceptLicense = true;
-                 };
+                stable = import nixpkgs-stable {
+                  config.allowUnfree = true;
+                  config.nvidia.acceptLicense = true;
+                };
                 nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
                 zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
               })
