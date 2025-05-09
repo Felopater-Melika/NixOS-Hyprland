@@ -20,6 +20,7 @@ in {
     boot = {
       #   consoleLogLevel = 5;
       kernelPackages = pkgs.linuxPackages_cachyos;
+      #kernelPackages = pkgs.linuxPackages_latest;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"

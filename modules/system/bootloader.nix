@@ -10,29 +10,22 @@
   ...
 }:
 with lib; let
-  cfg = config.system.bootloader;
+  cfg = config.system.bootloader-systemd;
 in {
-  options.system.bootloader = {
-    enable = mkEnableOption "Enable Bootloader";
+  options.system.bootloader-systemd = {
+    enable = mkEnableOption "Enable Bootloader systemd-boot";
   };
 
   config = mkIf cfg.enable {
-    catppuccin.grub.enable = true;
-    catppuccin.grub.flavor = "mocha";
     boot = {
       loader.efi = {
         canTouchEfiVariables = true;
       };
       loader.timeout = 3;
-      loader.grub = {
+      loader.systemd-boot = {
         enable = true;
-        devices = ["nodev"];
-        efiSupport = true;
-        zfsSupport = true;   # Enable ZFS support in GRUB
-        memtest86.enable = true;
-        extraGrubInstallArgs = ["--bootloader-id=${host}"];
-        configurationName = "${host}";
-        gfxmodeEfi = "2560x1440";
+        consoleMode = "auto";
+        configurationLimit = 8;
       };
       tmp = {
         useTmpfs = false;

@@ -4,14 +4,15 @@
   config,
   inputs,
   lib,
+  options,
   chaotic,
   ...
 }: {
-
   _module.args.pkgs-master = import inputs.nixpkgs-master {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
+
   environment.systemPackages = with pkgs; [
     ags_1
     brightnessctl # for brightness control
@@ -24,33 +25,29 @@
     grim
     protonvpn-gui
     hiddify-app
-    #  pwvucontrol_git
-
-    gtk-engine-murrine #for gtk themes
+    gtk-engine-murrine # for gtk themes
     hyprcursor # requires unstable channel
     hypridle # requires unstable channel
     imagemagick
     inxi
     jq
     kitty
-    libsForQt5.qtstyleplugin-kvantum #kvantum
+    libsForQt5.qtstyleplugin-kvantum # kvantum
     networkmanagerapplet
     nwg-look # requires unstable channel
-    # nwg-dock-hyprland
+    nwg-dock-hyprland
     wdisplays
-    # nvtopPackages.full
-    #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
     pkgs-master.pamixer
+    pkgs-master.gitui
     inputs.walker.packages.${pkgs.system}.default
     pavucontrol
     playerctl
     polkit_gnome
     pyprland
     libsForQt5.qt5ct
-    # kdePackages.full
     qt6ct
     qt6.qtwayland
-    qt6Packages.qtstyleplugin-kvantum #kvantum
+    qt6Packages.qtstyleplugin-kvantum # kvantum
     rofi-wayland
     slurp
     swappy
@@ -66,7 +63,7 @@
     fd
     home-manager
     bluez-tools
-    #wgpu-utils
+    wgpu-utils
     gtk3
     gtk4
     fish
@@ -88,6 +85,8 @@
     vivid
     (pkgs.callPackage ../../pkgs/nitch.nix {})
     nurl
-    firefox_nightly
+    socat
+    pkgs.lua52Packages.cjson
+    pkgs.lua52Packages.luautf8
   ];
 }

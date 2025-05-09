@@ -11,6 +11,7 @@
 }: {
   imports = [
     ./bootloader.nix
+    ./grub.nix
     ./plymouth.nix
     ./kernel.nix
     ./nh.nix
@@ -39,9 +40,9 @@
     ./cachix.nix
     ./packages.nix
     ./nix.nix
-    ./btrfs.nix
+    ./niri.nix
+    #./btrfs.nix
     ./zfs.nix
     ./zram.nix
-    
   ];
 }

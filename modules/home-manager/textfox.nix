@@ -15,10 +15,10 @@
         color = "#181825";
       };
       border = {
-        color = "#cba6f7";
-        width = "3px";
+        color = "#C85D71";
+        width = "1px";
         transition = "1.0s ease";
-        radius = "5px";
+        radius = "1px";
       };
       displayHorizontalTabs = false;
       displayNavButtons = true;
@@ -26,11 +26,11 @@
       font = {
         family = "JetBrainsMono Nerd Font";
         size = "15px";
-        accent = "#c6a0f6";
+        accent = "#C85D71";
       };
-      sidebery = {
-        margin = "1.0rem";
-      };
+       sidebery = {
+          margin = "1.0rem";
+       };
     };
   };
 }

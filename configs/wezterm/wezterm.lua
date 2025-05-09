@@ -1,5 +1,4 @@
-
--- Pull in the wezterm API
+local utils = require("utils")
 local wezterm = require("wezterm")
 local act = wezterm.action
 

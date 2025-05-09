@@ -2,9 +2,9 @@
   inputs,
   pkgs,
   ...
-}: #let
-#ghostty = inputs.ghostty.packages.x86_64-linux.default;
-#in
+}: let
+        ghostty = inputs.ghostty.packages.x86_64-linux.default;
+   in
 {
   home.packages = with pkgs; [ghostty];
 
@@ -19,7 +19,7 @@
 
     # Theme
     theme = "catppuccin-mocha"
-    background-opacity = 0.9
+    background-opacity = 0.98
 
     cursor-style = bar
     cursor-style-blink = true
@@ -48,29 +48,28 @@
     auto-update = off
   '';
   xdg.configFile."ghostty/themes/catppuccin-mocha".text = ''
-    background = #181825
-    foreground = #585b70
 
-    palette = 0=#45475a
-    palette = 1=#f38ba8
-    palette = 2=#a6e3a1
-    palette = 3=#f9e2af
-    palette = 4=#89b4fa
-    palette = 5=#f5c2e7
-    palette = 6=#94e2d5
-    palette = 7=#bac2de
-    palette = 8=#585b70
-    palette = 9=#f38ba8
-    palette = 10=#a6e3a1
-    palette = 11=#f9e2af
-    palette = 12=#89b4fa
-    palette = 13=#f5c2e7
-    palette = 14=#94e2d5
-    palette = 15=#a6adc8 
-    background = #181825
-    foreground = #cdd6f4
-    cursor-color = #f38ba8
-    selection-background = #353749
-    selection-foreground = #cdd6f4
-  '';
+        background      = #11121d 
+        foreground      = #cdd6f4
+        cursor-color    = #e78284
+        selection-background = #11121d
+        selection-foreground = #cdd6f4
+        
+        palette = 0=#414868   
+        palette = 1=#f7768e   
+        palette = 2=#9ece6a   
+        palette = 3=#e0af68   
+        palette = 4=#7aa2f7   
+        palette = 5=#bb9af7   
+        palette = 6=#7dcfff   
+        palette = 7=#c0caf5   
+        palette = 8=#414868   
+        palette = 9=#f7768e   
+        palette = 10=#9ece6a  
+        palette = 11=#e0af68  
+        palette = 12=#7aa2f7  
+        palette = 13=#bb9af7  
+        palette = 14=#7dcfff  
+        palette = 15=#c0caf5      
+'';
 }
