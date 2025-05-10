@@ -10,7 +10,7 @@
     playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
     control-center = spawn "env" "XDG_CURRENT_DESKTOP=gnome" "gnome-control-center";
     clipboard = spawn "sh" "-c" "~/.config/hypr/scripts/ClipManager.sh";
-    walker-clip = spawn "walker" "-m" "clipboard";
+    # walker-clip = spawn "walker" "-m" "clipboard";
   in {
     "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
     "XF86AudioMicMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
@@ -29,7 +29,7 @@
     "Print".action.screenshot-screen = {write-to-disk = true;};
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action = screenshot;
-    "Mod+D".action = spawn "${inputs.walker.packages.${pkgs.system}.default}/bin/walker";
+    # "Mod+D".action = spawn "${inputs.walker.packages.${pkgs.system}.default}/bin/walker";
     "Mod+Shift+Return".action = spawn "${
       inputs.ghostty.packages.${pkgs.system}.default
     }/bin/ghostty";
@@ -51,7 +51,7 @@
     "Mod+Period".action = expel-window-from-column;
     "Mod+C".action = center-window;
     "Mod+Tab".action = switch-focus-between-floating-and-tiling;
-    
+
     "Mod+1".action = focus-workspace 1;
     "Mod+2".action = focus-workspace 2;
     "Mod+3".action = focus-workspace 3;

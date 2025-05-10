@@ -35,7 +35,7 @@ in {
     source= $UserConfigs/UserSettings.conf
     source= $UserConfigs/WorkspaceRules.conf
     source= $HOME/.config/hypr/themes/mocha.conf
-    source = $HOME/.config/hypr/UserConfigs/hyprscroller.conf
+    # source = $HOME/.config/hypr/UserConfigs/hyprscroller.conf
     $mainMod = SUPER
   '';
   wayland.windowManager.hyprland.settings.bind = [
@@ -61,7 +61,7 @@ in {
       #     };
       #  })
       pkgs.hyprlandPlugins.borders-plus-plus
-      pkgs.hyprlandPlugins.hyprscroller
+      #   pkgs.hyprlandPlugins.hyprscroller
     ];
   };
 }

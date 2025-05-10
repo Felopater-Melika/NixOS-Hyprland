@@ -7,14 +7,14 @@
   lib,
   inputs,
   system,
-  darkmatter-theme,
+  #   darkmatter-theme,
   ...
 }:
 with lib; let
-  cfg = config.system.bootloader-systemd;
+  cfg = config.system.bootloader;
 in {
-  options.system.bootloader-systemd = {
-    enable = mkEnableOption "Enable Bootloader systemd-boot";
+  options.system.bootloader = {
+    enable = mkEnableOption "Enable Bootloader";
   };
 
   config = mkIf cfg.enable {
@@ -25,14 +25,14 @@ in {
         canTouchEfiVariables = true;
       };
       loader.timeout = 3;
-      loader.systemd-boot = {
+      loader.grub = {
         enable = true;
         devices = ["nodev"];
         efiSupport = true;
         zfsSupport = true; # Enable ZFS support in GRUB
         memtest86.enable = true;
         extraGrubInstallArgs = ["--bootloader-id=${host}"];
-        configurationName = "${host}";
+        # configurationName = "${host}";
         gfxmodeEfi = "2560x1440";
         useOSProber = true;
         extraEntries = ''
@@ -41,14 +41,13 @@ in {
               initrd ${pkgs.linuxPackages.kernel.out}/initrd
           }
         '';
-        # theme = pkgs.catppuccin-grub;
-        darkmatter-theme = {
-          enable = true;
-          style = "nixos";
-          icon = "color";
-          resolution = "1440p";
-        };
-        consoleMode = "auto";
+        theme = pkgs.catppuccin-grub;
+        # darkmatter-theme = {
+        #   enable = true;
+        #   style = "nixos";
+        #   icon = "color";
+        #   resolution = "1440p";
+        # };
         configurationLimit = 8;
       };
       tmp = {

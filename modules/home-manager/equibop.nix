@@ -1,14 +1,13 @@
 {
-    lib,
-    pkgs,
-    config,
-    inputs,
-    ...
-}:
-{
-    home.packages = with pkgs; [pkgs-master.equibop];
-    
-    xdg.configFile."equibop/settings.json".text = ''
+  lib,
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
+  home.packages = with pkgs; [pkgs.equibop];
+
+  xdg.configFile."equibop/settings.json".text = ''
     {
         "MINIMIZE_TO_TRAY": true,
         "arRPC": false,
@@ -21,5 +20,5 @@
         "clickTrayToShowHide": true
     }
 
-    '';
+  '';
 }

@@ -146,7 +146,6 @@ in {
     atuin
     bun
     deno
-    nodejs_23
     pnpm
     rustup
     cargo

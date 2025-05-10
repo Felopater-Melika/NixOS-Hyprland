@@ -31,7 +31,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
-    walker.url = "github:abenz1267/walker";
+    # walker.url = "github:abenz1267/walker";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -110,70 +110,67 @@
     };
     # wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    url = "github:danth/stylix";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.home-manager.follows = "home-manager";
-  };
-  nyxexprs.url = "github:notashelf/nyxexprs";
-  #    Neve.url = "github:maotseantonio/Neve";
-  #walker.url = "github:abenz1267/walker";
-  nix-flatpak.url = "github:gmodena/nix-flatpak";
-  nvchad4nix = {
-    url = "github:MOIS3Y/nvchad4nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  nvchad-on-steroids = {
-    url = "github:maotseantonio/nvchad_config";
-    flake = false;
-  };
-  home-manager = {
-    url = "github:nix-community/home-manager";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  spicetify-nix = {
-    url = "github:Gerg-L/spicetify-nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  nh.url = "github:viperML/nh";
-  nur.url = "github:nix-community/NUR";
-  lix-module = {
-    url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  darkmatter-grub-theme = {
-    url = gitlab:VandalByte/darkmatter-grub-theme;
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  zjstatus = {
-    url = "github:dj95/zjstatus";
-  };
-  treefmt-nix = {
-    url = "github:numtide/treefmt-nix";
-    inputs = {
-      nixpkgs.follows = "nixpkgs";
+    nyxexprs.url = "github:notashelf/nyxexprs";
+    #    Neve.url = "github:maotseantonio/Neve";
+    #walker.url = "github:abenz1267/walker";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nvchad4nix = {
+      url = "github:MOIS3Y/nvchad4nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  for-all-systems = {
-    url = "github:Industrial/for-all-systems";
-    inputs = {
-      nixpkgs = {
-        follows = "nixpkgs";
+    nvchad-on-steroids = {
+      url = "github:maotseantonio/nvchad_config";
+      flake = false;
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nh.url = "github:viperML/nh";
+    nur.url = "github:nix-community/NUR";
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    #   darkmatter-grub-theme = {
+    #     url = gitlab:VandalByte/darkmatter-grub-theme;
+    #     inputs.nixpkgs.follows = "nixpkgs";
+    #   };
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
       };
     };
-  };
-  git-hooks = {
-    url = "github:cachix/git-hooks.nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+    for-all-systems = {
+      url = "github:Industrial/for-all-systems";
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+    };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-  nix-github-actions = {
-    url = "github:nix-community/nix-github-actions";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
-  kubenix = {
-    url = "github:hall/kubenix";
-    inputs = {
-      nixpkgs.follows = "nixpkgs";
+    nix-github-actions = {
+      url = "github:nix-community/nix-github-actions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kubenix = {
+      url = "github:hall/kubenix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
   };
 
@@ -185,7 +182,7 @@
     home-manager,
     chaotic,
     kubenix,
-    darkmatter-grub-theme,
+    # darkmatter-grub-theme,
     treefmt-nix,
     git-hooks,
     for-all-systems,
@@ -269,7 +266,7 @@
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
-          inputs.darkmatter-grub-theme.nixosModule
+          #   inputs.darkmatter-grub-theme.nixosModule
           inputs.nixos-hardware.nixosModules.huawei-machc-wa
           inputs.nvf.nixosModules.default
           #lix-module.nixosModules.default
@@ -279,7 +276,7 @@
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
               inputs.niri.overlays.niri
-              nur.overlays.default
+              inputs.nur.overlays.default
               (final: prev: {
                 stable = import nixpkgs-stable {
                   config.allowUnfree = true;
