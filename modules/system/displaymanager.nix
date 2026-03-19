@@ -14,6 +14,11 @@ with lib; let
 in {
   options.system.displayManager = {
     enable = mkEnableOption "Enable Display Manager Services";
+    defaultSession = mkOption {
+      type = types.str;
+      default = "hyprland-uwsm";
+      description = "Default session presented by the display manager.";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -22,7 +27,6 @@ in {
       #      theme = "cybermonk";
       #  })
       pkgs.lyra-cursors
-      inputs.hyprddm.packages.${pkgs.system}.default
       pkgs.kdePackages.qtsvg
       pkgs.kdePackages.qtmultimedia
       pkgs.kdePackages.qtvirtualkeyboard
@@ -31,7 +35,7 @@ in {
       })
     ];
     services.xserver.enable = true;
-    services.displayManager.defaultSession = "hyprland-uwsm";
+    services.displayManager.defaultSession = cfg.defaultSession;
     services.displayManager.sddm = {
       enable = true; # Enable SDDM.
       package = lib.mkForce pkgs.kdePackages.sddm;

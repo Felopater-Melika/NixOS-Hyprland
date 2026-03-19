@@ -1,11 +1,11 @@
 {
   pkgs,
   config,
-  inputs,
+  host,
   ...
 }: let
-  configDirectory = "/home/philo/NixOS-Hyprland/";
-  hostname = "aetherion";
+  configDirectory = "${config.home.homeDirectory}/NixOS-Hyprland";
+  hostname = host;
 
   nixy =
     pkgs.writeShellScriptBin "nixy"
@@ -55,8 +55,8 @@
       elif [[ $1 == "cb" ]];then
         sudo /run/current-system/bin/switch-to-configuration boot
       elif [[ $1 == "remote" ]];then
-        cd ~/NixOS-Hyprland/ && git add . && git commit -m "update" && git push
-        ssh jack -S -C "cd /home/philo/NixOS-Hyprland && git pull && sudo -S nixos-rebuild switch --flake ~/NixOS-Hyprland/hosts/.#aetherion"
+        cd ${configDirectory} && git add . && git commit -m "update" && git push
+        ssh jack -S -C "cd ${configDirectory} && git pull && sudo -S nixos-rebuild switch --flake ${configDirectory}#${hostname}"
       elif [[ $1 == "loop" ]];then
         while true; do
           nixy

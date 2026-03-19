@@ -16,7 +16,6 @@
         "splashColor":"rgb(186, 194, 222)",
         "splashTheming": true,
         "staticTitle": false,
-        "splashAnimationPath": "/home/antonio/Downloads/nso-needy-streamer.gif",
         "clickTrayToShowHide": true
     }
 
