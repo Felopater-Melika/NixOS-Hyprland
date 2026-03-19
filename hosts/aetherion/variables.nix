@@ -1,9 +1,10 @@
-{
+rec {
   # Git Configuration ( For Pulling Software Repos )
 
   hostname = "aetherion";
   username = "philo";
-  configDirectory = "/home/philo/NixOS-Hyprland/";
+  configDirectory = "/home/${username}/NixOS-Hyprland";
+  installDisk = "/dev/disk/by-id/CHANGE-ME";
   gitUsername = "Felopater-Melika";
   gitEmail = "felopatermelika@gmail.com";
 

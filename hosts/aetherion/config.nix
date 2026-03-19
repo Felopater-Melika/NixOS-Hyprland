@@ -10,20 +10,7 @@
   system,
   ...
 }: let
-  name = "aetherion";
-  system = "x86_64-linux";
-  username = "philo";
-  version = "25.05";
-  settings = {
-    inherit system username;
-    hostname = "${name}";
-    stateVersion = "${version}";
-    hostPlatform = {inherit system;};
-    userdir = "/home/${username}";
-    useremail = "${username}@${system}.local";
-    userfullname = "${username}";
-  };
-  inherit (import ./variables.nix) keyboardLayout;
+  inherit (import ./variables.nix) browser installDisk keyboardLayout terminal;
   python-packages = pkgs.python3.withPackages (ps:
     with ps; [
       requests
@@ -42,8 +29,8 @@ in {
   imports = [
     ./hardware.nix
     ./users.nix
+    (import ../../disko/aetherion-btrfs.nix {device = installDisk;})
     ../../modules/system
-    # ../../modules/features/virtual-machine/kubernetes/k3s
   ];
 
   nixpkgs.overlays = [
@@ -60,21 +47,7 @@ in {
       };
     })
   ];
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 8192; # Size in MB for an 8GB swap file
-    }
-  ];
-
-  zramSwap = {
-    enable = true;
-    priority = 100;
-    memoryPercent = 50;
-    #   swapDevices = 1;
-    algorithm = "zstd";
-  };
-  drivers.amdgpu.enable = true;
+  drivers.nvidia.enable = true;
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
   system.kernel.enable = true;
@@ -82,22 +55,19 @@ in {
   system.plymouth.enable = true;
   system.audio.enable = true;
   system.displayManager.enable = true;
-  system.powermanagement.enable = true;
+  system.btrfs.enable = true;
+  system.xfce.enable = true;
+  system.xfce.makeDefaultSession = true;
+  system.powermanagement.enable = false;
   system.scheduler.enable = true;
-  # nixpkgs.config.allowUnfree = true;
   users = {mutableUsers = true;};
 
   environment.systemPackages =
     (with pkgs; [
       libva-utils
-      libvdpau-va-gl
-      intel-compute-runtime
-      intel-vaapi-driver
-      vaapiVdpau
       mesa
       egl-wayland
       mermaid-cli
-      vscode
       waybar
     ])
     ++ [python-packages androidSdk];
@@ -105,15 +75,15 @@ in {
   hardware.graphics.enable = true;
   console.keyMap = "${keyboardLayout}";
   environment.variables = {
-    VDAPU_DRIVER = lib.mkIf config.hardware.graphics.enable (lib.mkDefault "va_gl");
+    VDPAU_DRIVER = if config.drivers.nvidia.enable then "nvidia" else "va_gl";
   };
 
   environment.sessionVariables = {
     EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
-    BROWSER = "firefox";
-    TERMINAL = "wezterm";
-    VISUAL = "vscodium";
+    BROWSER = browser;
+    TERMINAL = terminal;
+    VISUAL = "nvim";
     GSK_RENDERER = "gl";
     CC = "${pkgs.llvmPackages_15.clang}/bin/clang";
     CXX = "${pkgs.llvmPackages_15.clang}/bin/clang++";

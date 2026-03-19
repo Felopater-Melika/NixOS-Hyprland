@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-master,
   inputs,
   options,
   lib,
@@ -10,7 +9,7 @@
 }: {
   imports = [
     inputs.hyprland.homeManagerModules.default
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
   #   nixpkgs.config.allowUnfree = true;
   programs.cava = {
@@ -68,7 +67,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "wezterm";
-    VISUAL = "codium";
+    VISUAL = "nvim";
     BROWSER = "firefox";
   };
   #home.backupFileExtension = "bkp";

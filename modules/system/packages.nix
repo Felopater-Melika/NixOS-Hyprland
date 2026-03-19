@@ -1,12 +1,9 @@
 {
   pkgs,
-  pkgs-master,
   config,
   inputs,
   lib,
   options,
-  chaotic,
-  android-nixpkgs,
   system,
   ...
 }: let
@@ -19,11 +16,6 @@
       emulator
     ]);
 in {
-  _module.args.pkgs-master = import inputs.nixpkgs-master {
-    inherit (pkgs.stdenv.hostPlatform) system;
-    inherit (config.nixpkgs) config;
-  };
-
   environment.systemPackages = with pkgs; [
     ags_1
     brightnessctl # for brightness control
@@ -109,9 +101,6 @@ in {
     wdisplays
     pamixer
     # nvtopPackages.full
-    #inputs.nixpkgs-master.legacyPackages.${pkgs.system}.pamixer
-    # pkgs-master.pamixer
-    # inputs.walker.packages.${pkgs.system}.default
     pavucontrol
     playerctl
     polkit_gnome

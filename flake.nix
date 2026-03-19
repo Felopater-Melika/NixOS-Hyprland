@@ -3,35 +3,20 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    ngrok.url = "github:ngrok/ngrok-nix";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nix = {
       url = "github:NixOS/nix/2.28.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # lix = {
-    #   url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #   };
-    # };
-    # lix-module = {
-    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-alien.url = "github:thiagokokada/nix-alien";
     wezterm.url = "github:wezterm/wezterm?dir=nix";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
-    # walker.url = "github:abenz1267/walker";
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -45,10 +30,6 @@
       url = "github:tadfisher/android-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    matugen = {
-      url = "github:/InioX/Matugen";
-    };
-    nvf.url = "github:notashelf/nvf";
     yazi.url = "github:sxyazi/yazi";
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
@@ -86,42 +67,15 @@
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-    };
-    custom-nixpkgs = {
-      url = "github:maotseantonio/custom-nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    textfox.url = "github:adriankarlen/textfox";
     #hyprland.url = "github:hyprwm/Hyprland?submodules=1";
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprswitch.url = "github:h3rmt/hyprswitch/release";
-    #fabric.url = "github:Fabric-Development/fabric";
-    hyprscroller = {
-      url = "github:maotseantonio/hyprscroller-flake";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprddm.url = "github:maotseantonio/hyprddm";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    # wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    nyxexprs.url = "github:notashelf/nyxexprs";
-    #    Neve.url = "github:maotseantonio/Neve";
-    #walker.url = "github:abenz1267/walker";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nvchad4nix = {
-      url = "github:MOIS3Y/nvchad4nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nvchad-on-steroids = {
-      url = "github:maotseantonio/nvchad_config";
-      flake = false;
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -132,14 +86,6 @@
     };
     nh.url = "github:viperML/nh";
     nur.url = "github:nix-community/NUR";
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    #   darkmatter-grub-theme = {
-    #     url = gitlab:VandalByte/darkmatter-grub-theme;
-    #     inputs.nixpkgs.follows = "nixpkgs";
-    #   };
     zjstatus = {
       url = "github:dj95/zjstatus";
     };
@@ -177,24 +123,14 @@
   outputs = inputs @ {
     self,
     nixpkgs,
-    nixpkgs-master,
     nixpkgs-stable,
     home-manager,
     chaotic,
-    kubenix,
-    # darkmatter-grub-theme,
     treefmt-nix,
     git-hooks,
     for-all-systems,
     nix-github-actions,
-    lix-module,
     zjstatus,
-    nvf,
-    nixvim,
-    #lix-module,
-    custom-nixpkgs,
-    ngrok,
-    android-nixpkgs,
     nixos-hardware,
     ...
   }: let
@@ -202,10 +138,6 @@
     host = "aetherion";
     username = "philo";
     pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs-master = import nixpkgs-master {
       inherit system;
       config.allowUnfree = true;
     };
@@ -256,22 +188,15 @@
           inherit username;
           inherit host;
           inherit chaotic;
-          inherit pkgs-master;
-          inherit android-nixpkgs;
         };
         modules = [
+          inputs.disko.nixosModules.disko
           ./hosts/${host}/config.nix
           inputs.spicetify-nix.nixosModules.default
           inputs.chaotic.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.catppuccin.nixosModules.catppuccin
-          #   inputs.darkmatter-grub-theme.nixosModule
-          inputs.nixos-hardware.nixosModules.huawei-machc-wa
-          inputs.nvf.nixosModules.default
-          #lix-module.nixosModules.default
-          ngrok.nixosModules.ngrok
-          nixos-hardware.nixosModules.asus-zephyrus-ga402
           {
             nixpkgs.overlays = [
               inputs.hyprpanel.overlay
@@ -282,7 +207,6 @@
                   config.allowUnfree = true;
                   config.nvidia.acceptLicense = true;
                 };
-                nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
                 zjstatus = inputs.zjstatus.packages."${pkgs.system}".default;
               })
             ];

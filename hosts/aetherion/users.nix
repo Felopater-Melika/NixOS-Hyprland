@@ -28,15 +28,6 @@ in {
       programs.home-manager.enable = true;
     };
   };
-  services = {
-    asusd = {
-      enable = true;
-      enableUserService = true;
-    };
-  };
-  programs.rog-control-center.enable = true;
-  services.supergfxd.enable = true;
-  systemd.services.supergfxd.path = [pkgs.pciutils];
   users = {
     users."${username}" = {
       homeMode = "755";
@@ -71,7 +62,6 @@ in {
       packages = with pkgs; [
       ];
     };
-
     defaultUserShell = pkgs.fish;
   };
   nix.settings.allowed-users = ["${username}"];

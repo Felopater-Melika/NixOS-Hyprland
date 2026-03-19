@@ -8,7 +8,9 @@
   inputs,
   system,
   ...
-}: {
+}: let
+  wallpaper = "/home/${username}/Pictures/wallpapers/luffy1_catppuccin-mocha.png";
+in ({
   stylix.enable = true;
   stylix.autoEnable = false;
   #   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
@@ -36,7 +38,6 @@
   #   stylix.targets.gtk.enable = true;
   stylix.targets.fish.enable = true;
   #   stylix.targets.nixos-icons.enable = true;
-  stylix.image = "/home/philo/Pictures/wallpapers/luffy1_catppuccin-mocha.png";
   stylix = {
     fonts = {
       sizes = {
@@ -66,4 +67,6 @@
       };
     };
   };
-}
+} // lib.optionalAttrs (builtins.pathExists wallpaper) {
+  stylix.image = wallpaper;
+})
