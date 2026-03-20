@@ -36,14 +36,12 @@ in {
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
         (makeCommand "wl-paste --type image --watch cliphist store")
         (makeCommand "wl-paste --type text --watch cliphist store")
-        (makeCommand "xwayland-satalite")
+        (makeCommand "xwayland-satellite")
         (makeCommand "swww-daemon")
         (makeCommand "uwsm finalize")
         (makeCommand "new-bar")
         (makeCommand "${wallpaperScript}/bin/niri-wallpaper")
         (makeCommand "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome")
-        (makeCommand "wayland-satalite")
-
       ];
       input = {
         keyboard.xkb.layout = "us";
@@ -64,35 +62,32 @@ in {
         workspace-auto-back-and-forth = true;
       };
       screenshot-path = "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png";
+      cursor = {
+        size = 32;
+        theme = "${pointer.name}";
+      };
+      # FIXME: Confirm the monitor connector names on first boot with `niri msg outputs`.
+      # FIXME: Swap DP-1/DP-2 or adjust positions if the cables enumerate differently.
       outputs = {
-        "eDP-1" = {
-          mode = {
-              width = 2160;
-              height = 1440;
-              refresh = null;
-          };
+        "DP-1" = {
           scale = 1.0;
+          transform = "normal";
           position = {
             x = 0;
             y = 0;
           };
         };
-        "HDMI-A-1" = {
-          mode = {
-            width = 1920;
-            height = 1080;
-            refresh = null;
-          };
+        "DP-2" = {
           scale = 1.0;
+          transform = "normal";
+          # FIXME: This assumes the left display is 5120 logical pixels wide.
+          # FIXME: Change this offset if the ultrawide is a different width or scaling.
+          # Assumes the 49" main display is 5120 logical pixels wide at scale 1.
           position = {
-            x = 0;
-            y = -1080;
+            x = 5120;
+            y = 0;
           };
         };
-      };
-      cursor = {
-        size = 32;
-        theme = "${pointer.name}";
       };
       layout = {
         focus-ring.enable = false;

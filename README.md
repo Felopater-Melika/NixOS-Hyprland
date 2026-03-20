@@ -63,6 +63,7 @@
 # 🗃️ Overview
 ### My config was different from JaKooLit NixOS-Hyprland. Dont blindly use my install script. plz check the install.sh file.
 ### Now My Primary WM is Niri But I also update my hyprland and its config. good luck have fun. 
+### For a fresh machine install, use [docs/install-new-machine.md](docs/install-new-machine.md) instead of blindly running `install.sh`.
 ## 📚 Layout
 
 -   [flake.nix](flake.nix) base of the configuration

@@ -32,14 +32,7 @@ in {
         memtest86.enable = true;
         extraGrubInstallArgs = ["--bootloader-id=${host}"];
         # configurationName = "${host}";
-        gfxmodeEfi = "2560x1440";
         useOSProber = true;
-        extraEntries = ''
-          menuentry "Fallback Kernel (Standard NixOS)" {
-              linux ${pkgs.linuxPackages.kernel.out}/bzImage
-              initrd ${pkgs.linuxPackages.kernel.out}/initrd
-          }
-        '';
         theme = pkgs.catppuccin-grub;
         # darkmatter-theme = {
         #   enable = true;

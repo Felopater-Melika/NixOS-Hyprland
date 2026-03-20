@@ -10,6 +10,15 @@ in {
     XDG_SESSION_DESKTOP = "Hyprland";
     XDG_CURRENT_DESKTOP = "Hyprland";
   };
+  xdg.configFile."hypr/animations".source = ../../configs/hypr/animations;
+  xdg.configFile."hypr/configs".source = ../../configs/hypr/configs;
+  xdg.configFile."hypr/scripts".source = ../../configs/hypr/scripts;
+  xdg.configFile."hypr/UserConfigs".source = ../../configs/hypr/UserConfigs;
+  xdg.configFile."hypr/wallust".source = ../../configs/hypr/wallust;
+  xdg.configFile."hypr/windowrule.py".source = ../../configs/hypr/windowrule.py;
+  xdg.configFile."hypr/hyprlock.conf".source = ../../configs/hypr/hyprlock.conf;
+  xdg.configFile."hypr/hyprswitch.css".source = ../../configs/hypr/hyprswitch.css;
+  xdg.configFile."hypr/themes/mocha.conf".source = ../../configs/hypr/themes/mocha.conf;
   home.packages = [pkgs.wl-clipboard];
   wayland.windowManager.hyprland = {
     enable = true;
